@@ -36,9 +36,9 @@ Future<void> main() async {
   //     .then((value) {
   //   isPay = value.data()?["userIsPayed"];
   // });
-  // if (currentUser != null) {
-  //   await MainFunctions.getcurrentUserInfos();
-  // }
+  if (currentUser != null) {
+    await MainFunctions.getcurrentUserInfos();
+  }
 
   runApp(const MyApp());
 }

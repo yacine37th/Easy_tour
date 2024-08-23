@@ -137,7 +137,7 @@ class SignInController extends GetxController {
         //   case "Student":
         //     Get.offAndToNamed("/HomeStudent");
         //   default:
-        //     Get.offAndToNamed("/Home");
+        Get.offAndToNamed("/Home");
         // }
       } else {
         await FirebaseAuth.instance.currentUser?.sendEmailVerification();

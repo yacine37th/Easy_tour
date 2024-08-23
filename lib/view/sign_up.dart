@@ -55,13 +55,13 @@ class SignUp extends StatelessWidget {
                       },
                       validator: (val) {
                         if (val!.isEmpty) {
-                          return "الرجاء ملء اسم الاقامة الخاص بك";
+                          return "الرجاء ملء اسم المستخدم الخاص بك";
                         }
                         return null;
                       },
                       initialValue: signUpController.userName,
                       decoration: InputDecoration(
-                        hintText: 'اسم الاقامة',
+                        hintText: 'اسم المستخدم',
                         errorMaxLines: 2,
                         prefixIcon: const Icon(
                           Icons.person_2_outlined,
@@ -99,67 +99,7 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    DropdownButtonFormField(
-                        value: signUpController.selectedValue,
-                        hint: const Text("الولاية",
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w300,
-                                color: Colors.grey)),
-                        focusColor: AppColors.kPrimary2,
-                        decoration: InputDecoration(
-                          hintText: "الولاية",
-                          errorMaxLines: 2,
-                          prefixIcon: const Icon(
-                            Icons.location_on_outlined,
-                            color: AppColors.kPrimary2,
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 16),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: AppColors.kLine),
-                            borderRadius: BorderRadius.circular(40),
-                          ),
-                          // border: InputBorder.none,
-                          fillColor: AppColors.inputBg,
-                          filled: true,
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: AppColors.kPrimary2),
-                            borderRadius: BorderRadius.circular(40),
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: AppColors.kLine),
-                            borderRadius: BorderRadius.circular(40),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide:
-                                const BorderSide(color: AppColors.KError),
-                            borderRadius: BorderRadius.circular(40),
-                          ),
-                          hintStyle: const TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.grey),
-                        ),
-                        isExpanded: true,
-                        onChanged: (value) {
-                          signUpController.selectedValue = value;
-                        },
-                        onSaved: (value) {
-                          signUpController.selectedValue = value;
-                        },
-                        validator: (value) =>
-                            value == null ? "يرجى اختيار الولاية" : null,
-                        items: signUpController.wilayas.map((category) {
-                          return DropdownMenuItem(
-                            value: category,
-                            child: Text(category),
-                          );
-                        }).toList()),
-                    const SizedBox(height: 20),
+              
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.emailAddress,

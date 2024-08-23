@@ -5,7 +5,7 @@ class AppColors {
   static const Color blackColor = Color(0xFF000000);
 
   static const Color kPrimary3 = Color(0xFFff2679);
-  static const Color kPrimary2 = Color(0xFFef7f2a);
+  static const Color kPrimary2 = Color(0xFF26CB93);
   static const Color inputBg = Color(0xFFf5f5f5);
   static const Color ellipsisColor = Color(0xFFCEE1EA);
   static const Color greenColor = Color(0xFF006633);

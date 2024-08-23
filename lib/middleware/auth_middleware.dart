@@ -13,8 +13,8 @@ class AuthMiddleware extends GetMiddleware {
       //   case "Student":
       //     return const RouteSettings(name: "/HomeStudent");
       //   default:
-      //     return const RouteSettings(name: "/Home");
       // }
+      return const RouteSettings(name: "/Home");
     }
     return null;
   }
