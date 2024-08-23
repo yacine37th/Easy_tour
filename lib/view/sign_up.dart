@@ -32,7 +32,7 @@ class SignUp extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           children: [
             const Text(
-              'مرحباً بك في تطبيق اقامتي\nقم بإنشاء حساب جديد',
+              'مرحباً بك في تطبيق الخدمات\nقم بإنشاء حساب جديد',
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 25.0),

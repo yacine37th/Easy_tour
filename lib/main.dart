@@ -5,6 +5,7 @@ import 'package:flutter_application_1/view/home.dart';
 import 'package:flutter_application_1/view/sign_in.dart';
 import 'package:get/get.dart';
 
+import 'firebase_options.dart';
 import 'functions/functions.dart';
 import 'middleware/auth_middleware.dart';
 import 'model/user.dart';
@@ -26,7 +27,7 @@ bool prevVerfiy = false;
 bool isPay = false;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   currentUser = FirebaseAuth.instance.currentUser;
   // await FirebaseFirestore.instance
   //     .collection("user")
@@ -35,9 +36,9 @@ Future<void> main() async {
   //     .then((value) {
   //   isPay = value.data()?["userIsPayed"];
   // });
-  if (currentUser != null) {
-    await MainFunctions.getcurrentUserInfos();
-  }
+  // if (currentUser != null) {
+  //   await MainFunctions.getcurrentUserInfos();
+  // }
 
   runApp(const MyApp());
 }

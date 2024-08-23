@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "738791211618",
+    "project_id": "easytour-10c85",
+    "storage_bucket": "easytour-10c85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738791211618:android:12f03e9008fb36c3a1473b",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBELJ5ERlDzzIvo8DjcwGDisk8IEI1I0yE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
