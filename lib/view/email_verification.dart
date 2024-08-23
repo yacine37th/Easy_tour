@@ -14,19 +14,18 @@ class EmailVerification extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 1,
+backgroundColor: AppColors.kPrimary2,        elevation: 1,
         leading: IconButton(
             onPressed: () {
               navigator!.pop();
             },
             icon: const Icon(
               Icons.arrow_back_ios_outlined,
-              color: AppColors.kPrimary2,
+              color: AppColors.whiteColor,
             )),
         title: const Text(
           "التحقق من البريد الإلكتروني",
-          style: TextStyle(color: AppColors.kPrimary2),
+          style: TextStyle(color: AppColors.whiteColor),
         ),
       ),
       body: Padding(
