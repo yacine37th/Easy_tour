@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/home_binding.dart';
 import 'package:flutter_application_1/view/home.dart';
 import 'package:flutter_application_1/view/sign_in.dart';
 import 'package:get/get.dart';
@@ -83,7 +84,7 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: "/Home",
           page: () => const Home(),
-          // binding: HomeScreenAgencyBinding(),
+          binding: HomeBinding(),
         ),
         // GetPage(
         //   name: "/AddForm",
@@ -96,7 +97,7 @@ class MyApp extends StatelessWidget {
         //   binding: ReservationFormBinding(),
         // ),
       ],
-      initialRoute: "/SignIn",
+      initialRoute: "/Home",
     );
   }
 }
