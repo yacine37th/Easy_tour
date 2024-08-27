@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Nafssiya',
+      title: 'EASYTUOR',
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.cupertino,
       textDirection: MainFunctions.textDirection,

@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
 import '../model/event.dart';
+import '../model/publicity.dart';
 
 class HomeController extends GetxController {
   final List<EventModel> flutterTopicsList = [
@@ -33,4 +35,43 @@ class HomeController extends GetxController {
       conditions: '',
     ),
   ];
+  Map<String, PublicityModel> publicities = {};
+  Future<void> getCarouselPub() async {
+    var tempIDList = {};
+    await FirebaseFirestore.instance.collection("carousel").get().then((value) {
+      for (int index = 0; index < value.docs.length; index++) {
+        String? carouselUrl;
+        if (value.docs[index].data().containsKey("carouselUrl")) {
+          carouselUrl = value.docs[index]["carouselUrl"];
+        }
+        tempIDList.addAll({
+          value.docs[index].id: [
+            value.docs[index]["carouselPicture"],
+            carouselUrl
+          ]
+        });
+        publicities.addAll({
+          value.docs[index].id: PublicityModel(
+            id: value.docs[index].id,
+            imageUrl: value.docs[index]["carouselPicture"],
+            url: value.docs[index]["carouselUrl"],
+          )
+        });
+      }
+    });
+    publicities.forEach(
+      (key, value) {
+        print(value.id);
+      },
+    );
+    // publicities
+    update();
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    getCarouselPub();
+    super.onInit();
+  }
 }
