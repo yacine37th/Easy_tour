@@ -8,7 +8,7 @@ class AppColors {
   static const Color kPrimary2 = Color(0xFF26CB93);
   static const Color inputBg = Color(0xFFf5f5f5);
   static const Color ellipsisColor = Color(0xFFCEE1EA);
-  static const Color greenColor = Color(0xFF006633);
+  static const Color greenColor = Color(0xFFe3f226);
   // static const Color kPrimary2 = Color(0xFF84BD93);
   static const Color kPrimary2Onpress = Color.fromARGB(255, 56, 151, 81);
   

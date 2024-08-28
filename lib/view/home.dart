@@ -135,7 +135,7 @@ class Home extends StatelessWidget {
                                   .headlineSmall!
                                   .copyWith(
                                     fontSize: 20,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                   ),
                             )

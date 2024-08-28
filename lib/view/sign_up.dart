@@ -13,7 +13,7 @@ class SignUp extends StatelessWidget {
     SignUpController signUpController = Get.find();
     return Scaffold(
         appBar: AppBar(
-          backgroundColor:  AppColors.kPrimary2,
+          backgroundColor: AppColors.greenColor,
           elevation: 0,
           leading: IconButton(
               onPressed: () {
@@ -27,8 +27,7 @@ class SignUp extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         body: ListView(
-          padding:
-              const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
           physics: const BouncingScrollPhysics(),
           children: [
             const Text(
@@ -71,8 +70,7 @@ class SignUp extends StatelessWidget {
                         contentPadding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 16),
                         enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: AppColors.kLine),
+                          borderSide: const BorderSide(color: AppColors.kLine),
                           borderRadius: BorderRadius.circular(40),
                         ),
                         fillColor: AppColors.inputBg,
@@ -83,13 +81,11 @@ class SignUp extends StatelessWidget {
                           borderRadius: BorderRadius.circular(40),
                         ),
                         border: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: AppColors.kLine),
+                          borderSide: const BorderSide(color: AppColors.kLine),
                           borderRadius: BorderRadius.circular(40),
                         ),
                         errorBorder: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: AppColors.KError),
+                          borderSide: const BorderSide(color: AppColors.KError),
                           borderRadius: BorderRadius.circular(40),
                         ),
                         hintStyle: const TextStyle(
@@ -99,13 +95,11 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-              
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.emailAddress,
                       onSaved: (userEmailAddress) {
-                        signUpController.userEmailAddress =
-                            userEmailAddress;
+                        signUpController.userEmailAddress = userEmailAddress;
                       },
                       onChanged: (userEmailAddress) {
                         signUpController.userEmailAddress =
@@ -130,8 +124,7 @@ class SignUp extends StatelessWidget {
                         contentPadding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 16),
                         enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: AppColors.kLine),
+                          borderSide: const BorderSide(color: AppColors.kLine),
                           borderRadius: BorderRadius.circular(40),
                         ),
                         // border: InputBorder.none,
@@ -143,13 +136,11 @@ class SignUp extends StatelessWidget {
                           borderRadius: BorderRadius.circular(40),
                         ),
                         border: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: AppColors.kLine),
+                          borderSide: const BorderSide(color: AppColors.kLine),
                           borderRadius: BorderRadius.circular(40),
                         ),
                         errorBorder: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: AppColors.KError),
+                          borderSide: const BorderSide(color: AppColors.KError),
                           borderRadius: BorderRadius.circular(40),
                         ),
                         hintStyle: const TextStyle(
@@ -200,8 +191,8 @@ class SignUp extends StatelessWidget {
                           fillColor: AppColors.inputBg,
                           filled: true,
                           focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: AppColors.kPrimary2),
+                            borderSide:
+                                const BorderSide(color: AppColors.kPrimary2),
                             borderRadius: BorderRadius.circular(40),
                           ),
                           border: OutlineInputBorder(
@@ -234,19 +225,18 @@ class SignUp extends StatelessWidget {
                         },
                         style: ButtonStyle(
                             foregroundColor: WidgetStateProperty.all(
-                              AppColors.kPrimary2,
+                              AppColors.greenColor,
                             ),
                             backgroundColor: WidgetStateProperty.all(
-                              AppColors.kPrimary2,
+                              AppColors.greenColor,
                             ),
                             overlayColor: WidgetStateColor.resolveWith(
                                 (states) => Colors.white.withOpacity(0.1)),
-                            shape: WidgetStateProperty.all(
-                                RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(100),
+                            shape:
+                                WidgetStateProperty.all(RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(100),
                                     side: const BorderSide(
-                                      color: AppColors.kPrimary2,
+                                      color: AppColors.greenColor,
                                     )))),
                         child: Card(
                           elevation: 0,
@@ -265,7 +255,7 @@ class SignUp extends StatelessWidget {
                             child: const Text(
                               "تسجيل حساب جديد",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontSize: 19,
                                   fontWeight: FontWeight.bold),
                             ),

@@ -56,7 +56,7 @@ class SignIn extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.w300,
-                      color: AppColors.kPrimary2,
+                      color: AppColors.goldenColor,
                     ),
                   ),
                 ),
@@ -108,7 +108,7 @@ class SignIn extends StatelessWidget {
                             filled: true,
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  const BorderSide(color: AppColors.kPrimary2),
+                                  const BorderSide(color: AppColors.goldenColor),
                               borderRadius: BorderRadius.circular(40),
                             ),
                             border: OutlineInputBorder(
@@ -225,10 +225,10 @@ class SignIn extends StatelessWidget {
                             },
                             style: ButtonStyle(
                                 foregroundColor: WidgetStateProperty.all(
-                                  AppColors.kPrimary2,
+                                  AppColors.goldenColor,
                                 ),
                                 backgroundColor: WidgetStateProperty.all(
-                                  AppColors.kPrimary2,
+                                  AppColors.goldenColor,
                                 ),
                                 overlayColor: WidgetStateColor.resolveWith(
                                     (states) => Colors.white.withOpacity(0.1)),
@@ -237,7 +237,7 @@ class SignIn extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(100),
                                         side: const BorderSide(
-                                          color: AppColors.kPrimary2,
+                                          color: AppColors.goldenColor,
                                         )))),
                             child: Card(
                               elevation: 0,
@@ -255,7 +255,7 @@ class SignIn extends StatelessWidget {
                                 child: const Text(
                                   "تسجيل الدخول",
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 19,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -277,7 +277,7 @@ class SignIn extends StatelessWidget {
                                 'التسجيل',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: AppColors.kPrimary2,
+                                  color: AppColors.goldenColor,
                                 ),
                               ),
                             ),
