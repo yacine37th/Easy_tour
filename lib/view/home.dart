@@ -14,7 +14,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     HomeController homeController = Get.find();
     return Scaffold(
+        backgroundColor: AppColors.whiteColor,
         appBar: AppBar(
+          backgroundColor: AppColors.whiteColor,
           leading: IconButton(
               onPressed: () {
                 Scaffold.of(context).openDrawer();
