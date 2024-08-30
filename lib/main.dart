@@ -2,16 +2,18 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/home_binding.dart';
+import 'package:flutter_application_1/view/agencies/agency_details.dart';
 import 'package:flutter_application_1/view/home.dart';
 import 'package:flutter_application_1/view/houses.dart';
 import 'package:flutter_application_1/view/sign_in.dart';
-import 'package:flutter_application_1/view/tourist_agencies.dart';
+import 'package:flutter_application_1/view/agencies/tourist_agencies.dart';
 import 'package:get/get.dart';
 
 import 'firebase_options.dart';
 import 'functions/functions.dart';
 import 'middleware/auth_middleware.dart';
 import 'model/user.dart';
+import 'utils/agency_details_binding.dart';
 import 'utils/forgot_password_bindings.dart';
 import 'utils/sign_in_binding.dart';
 import 'utils/sign_up_binding.dart';
@@ -99,6 +101,12 @@ class MyApp extends StatelessWidget {
           page: () => TouristAgenciesPage(),
           binding: TouristAgenciesBinding(),
         ),
+         GetPage(
+          name: "/AgencyDetailsPage",
+          page: () => AgencyDetailsPage(),
+          binding: AgencyDetailsBinding(),
+        ),
+        // 
         // GetPage(
         //   name: "/AddForm",
         //   page: () => const AddForm(),
