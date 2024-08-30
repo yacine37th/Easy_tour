@@ -4,8 +4,7 @@ import 'package:get/get.dart';
 import '../model/touristic_guide.dart';
 
 class TouristicGuidesController extends GetxController {
-
- final List<TouristicGuideModel> touristics = [
+  final List<TouristicGuideModel> touristics = [
     // HouseModel(
     //   imageUrl: ['assets/images/house1.png'],
     //   id: '3',
@@ -19,7 +18,7 @@ class TouristicGuidesController extends GetxController {
 
     // Add more houses here
   ];
-  Future<void> getAllHouses() async {
+  Future<void> getAllTouristicsGuide() async {
     FirebaseFirestore.instance
         .collection("touristGuides")
         .snapshots(includeMetadataChanges: true)
@@ -30,16 +29,16 @@ class TouristicGuidesController extends GetxController {
         TouristicGuideModel touristAgencyModel = TouristicGuideModel(
           id: doc["touristGuideId"],
           adress: doc["touristGuideAdress"],
-          imageUrl: doc["touristGuidePictures"],
+          image: doc["touristGuideIcon"],
           phone: doc["touristGuidePhone"],
-          location: doc["touristGuidePosition"],
-          link: doc["touristGuideLink"],
-          wilaya: doc["touristGuideWilaya"],
           description: doc["touristGuideDescription"],
+          email: doc["touristGuideEmail"],
+          name: doc["touristGuideName"],
+          languages: doc["touristGuideLanguages"],
         );
 
         // Add the agency to the list
-        houses.add(touristAgencyModel);
+        touristics.add(touristAgencyModel);
       }
       update(); // Notify listeners about the update
     });
@@ -48,7 +47,7 @@ class TouristicGuidesController extends GetxController {
   @override
   void onInit() {
     // TODO: implement onInit
-    getAllHouses();
+    getAllTouristicsGuide();
     super.onInit();
   }
 }

@@ -20,11 +20,15 @@ import 'utils/houses_binding.dart';
 import 'utils/sign_in_binding.dart';
 import 'utils/sign_up_binding.dart';
 import 'utils/tourist_agencies_binding.dart';
+import 'utils/touristic_guide_details_binding.dart';
+import 'utils/touristic_guides_binding.dart';
 import 'utils/verify_email_bindings.dart';
 import 'view/email_verification.dart';
 import 'view/forgot_password.dart';
 import 'view/houses/house_details.dart';
 import 'view/sign_up.dart';
+import 'view/touristic_guide/touristic_guide_details.dart';
+import 'view/touristic_guide/touristic_guides.dart';
 
 User? currentUser = FirebaseAuth.instance.currentUser;
 UserModel currentUserInfos = UserModel(
@@ -115,7 +119,17 @@ class MyApp extends StatelessWidget {
           page: () => HouseDetails(),
           binding: HouseDetailsBinding(),
         ),
-        // HouseDetails
+        GetPage(
+          name: "/TouristicGuides",
+          page: () => TouristicGuides(),
+          binding: TouristicGuidesBinding(),
+        ),
+        GetPage(
+          name: "/TouristicGuideDetails",
+          page: () => TouristicGuideDetails(),
+          binding: TouristicGuideDetailsBinding(),
+        ),
+        //
         // GetPage(
         //   name: "/AddForm",
         //   page: () => const AddForm(),

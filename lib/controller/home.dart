@@ -24,7 +24,7 @@ class HomeController extends GetxController {
       id: "2",
       topicIcon: "assets/images/guide.png",
       topicName: "المرشد السياحي",
-      link: '/ElectronicLibrary',
+      link: '/TouristicGuides',
       conditions: '',
     ),
     // EventModel(

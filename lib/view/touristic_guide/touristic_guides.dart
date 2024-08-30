@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/model/touristic_guide.dart';
 import 'package:get/get.dart';
 
+import '../../controller/touristic_guides.dart';
 import '../../theme/main_colors.dart';
 
 class TouristicGuides extends StatelessWidget {
@@ -8,7 +10,8 @@ class TouristicGuides extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
+    TouristicGuidesController touristicGuidesController = Get.find();
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text('المرشدين'),
@@ -27,7 +30,7 @@ class TouristicGuides extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GetBuilder<HousesController>(
+        child: GetBuilder<TouristicGuidesController>(
           builder: (contx) => GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -35,10 +38,11 @@ class TouristicGuides extends StatelessWidget {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
             ),
-            itemCount: housesController.houses.length,
+            itemCount: touristicGuidesController.touristics.length,
             itemBuilder: (context, index) {
-              final house = housesController.houses[index];
-              return HouseCard(house: house);
+              final touristicGuide =
+                  touristicGuidesController.touristics[index];
+              return HouseCard(touristicGuide: touristicGuide);
             },
           ),
         ),
@@ -48,15 +52,15 @@ class TouristicGuides extends StatelessWidget {
 }
 
 class HouseCard extends StatelessWidget {
-  final HouseModel house;
+  final TouristicGuideModel touristicGuide;
 
-  const HouseCard({required this.house});
+  const HouseCard({required this.touristicGuide});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed("/HouseDetails", arguments: house);
+        Get.toNamed("/TouristicGuideDetails", arguments: touristicGuide);
       },
       child: Card(
         elevation: 4,
@@ -70,7 +74,7 @@ class HouseCard extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
                 child: Image.network(
-                  house.imageUrl[0],
+                  touristicGuide.image,
                   fit: BoxFit.cover,
                   width: double.infinity,
                 ),
@@ -82,22 +86,15 @@ class HouseCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    house.wilaya,
+                    touristicGuide.name,
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  // SizedBox(height: 4),
-                  // Text(
-                  //   house.location,
-                  //   style: TextStyle(
-                  //     color: Colors.grey,
-                  //   ),
-                  // ),
-                  // SizedBox(height: 8),
+
                   Text(
-                    house.adress,
+                    touristicGuide.adress,
                     style: TextStyle(
                       color: Colors.grey,
                     ),
