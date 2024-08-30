@@ -60,7 +60,9 @@ class TouristicGuideDetails extends StatelessWidget {
                 title: 'الايميل',
                 subtitle:
                     touristicGuideDetailsController.touristicGuideModel.email,
-                onPressed: () => {},
+                onPressed: () => touristicGuideDetailsController.launchURL(
+                  'mailto:${touristicGuideDetailsController.touristicGuideModel.email}',
+                ),
               ),
               const SizedBox(height: 20),
               _buildInfoCard(
@@ -71,7 +73,6 @@ class TouristicGuideDetails extends StatelessWidget {
                 onPressed: () => {},
               ),
               const SizedBox(height: 20),
-
               _buildInfoCard(
                 icon: Icons.language_sharp,
                 title: 'اللغات',
@@ -80,26 +81,15 @@ class TouristicGuideDetails extends StatelessWidget {
                 onPressed: () => {},
               ),
               const SizedBox(height: 20),
-              // const SizedBox(height: 16),
               _buildInfoCard(
                 icon: Icons.phone,
                 title: 'رقم الهاتف',
-                //
                 subtitle:
                     touristicGuideDetailsController.touristicGuideModel.phone,
                 onPressed: () => touristicGuideDetailsController.launchURL(
                     'tel:${touristicGuideDetailsController.touristicGuideModel.phone}'),
               ),
               const SizedBox(height: 20),
-
-              // const SizedBox(height: 16),
-              // _buildInfoCard(
-              //   icon: Icons.language,
-              //   title: "قم بزيارة موقع الوكالة",
-              //   subtitle: 'اضغط للدهاب الى الموقع',
-              //   onPressed: () => agencyDetailsController
-              //       .launchURL(touristicGuideDetailsController.touristicGuideModel.website),
-              // ),
               _buildInfoCard(
                   icon: Icons.language,
                   title: "وصف",
