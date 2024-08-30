@@ -3,7 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/home_binding.dart';
 import 'package:flutter_application_1/view/home.dart';
+import 'package:flutter_application_1/view/houses.dart';
 import 'package:flutter_application_1/view/sign_in.dart';
+import 'package:flutter_application_1/view/tourist_agencies.dart';
 import 'package:get/get.dart';
 
 import 'firebase_options.dart';
@@ -13,6 +15,7 @@ import 'model/user.dart';
 import 'utils/forgot_password_bindings.dart';
 import 'utils/sign_in_binding.dart';
 import 'utils/sign_up_binding.dart';
+import 'utils/tourist_agencies_binding.dart';
 import 'utils/verify_email_bindings.dart';
 import 'view/email_verification.dart';
 import 'view/forgot_password.dart';
@@ -86,6 +89,16 @@ class MyApp extends StatelessWidget {
           page: () => const Home(),
           binding: HomeBinding(),
         ),
+        GetPage(
+          name: "/Houses",
+          page: () => HouseListPage(),
+          // binding: HomeBinding(),
+        ),
+        GetPage(
+          name: "/TouristAgencies",
+          page: () => TouristAgenciesPage(),
+          binding: TouristAgenciesBinding(),
+        ),
         // GetPage(
         //   name: "/AddForm",
         //   page: () => const AddForm(),
@@ -97,7 +110,7 @@ class MyApp extends StatelessWidget {
         //   binding: ReservationFormBinding(),
         // ),
       ],
-      initialRoute: "/SignIn",
+      initialRoute: "/Home",
     );
   }
 }

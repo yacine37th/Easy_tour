@@ -10,14 +10,14 @@ class HomeController extends GetxController {
       id: "0",
       topicIcon: "assets/images/houses.png",
       topicName: "كراء المنازل",
-      link: '/Istichara',
+      link: '/Houses',
       conditions: '',
     ),
     EventModel(
       id: "1",
       topicIcon: "assets/images/businessman.png",
       topicName: "الوكالات السياحية",
-      link: '/IwaaStudent',
+      link: '/TouristAgencies',
       conditions: '',
     ),
     EventModel(
@@ -27,13 +27,13 @@ class HomeController extends GetxController {
       link: '/ElectronicLibrary',
       conditions: '',
     ),
-    EventModel(
-      id: "3",
-      topicIcon: "assets/images/trips.png",
-      topicName: "رحلات التخييم",
-      link: '/Dawarat',
-      conditions: '',
-    ),
+    // EventModel(
+    //   id: "3",
+    //   topicIcon: "assets/images/trips.png",
+    //   topicName: "رحلات التخييم",
+    //   link: '/Dawarat',
+    //   conditions: '',
+    // ),
   ];
   Map<String, PublicityModel> publicities = {};
   Future<void> getCarouselPub() async {
