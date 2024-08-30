@@ -5,16 +5,16 @@ import '../model/house.dart';
 
 class HousesController extends GetxController {
   final List<HouseModel> houses = [
-    HouseModel(
-      imageUrl: ['assets/images/house1.png'],
-      id: '3',
-      wilaya: 'oran',
-      adress: 'AI TURk',
-      phone: '+21343',
-      link: '',
-      location: '',
-      description: '',
-    ),
+    // HouseModel(
+    //   imageUrl: ['assets/images/house1.png'],
+    //   id: '3',
+    //   wilaya: 'oran',
+    //   adress: 'AI TURk',
+    //   phone: '+21343',
+    //   link: '',
+    //   location: '',
+    //   description: '',
+    // ),
 
     // Add more houses here
   ];
@@ -34,13 +34,12 @@ class HousesController extends GetxController {
           location: doc["housePosition"],
           link: doc["houseLink"],
           wilaya: doc["houseWilaya"],
-          description: doc["housePosition"],
+          description: doc["houseDescription"],
         );
 
         // Add the agency to the list
         houses.add(touristAgencyModel);
       }
-
       update(); // Notify listeners about the update
     });
   }

@@ -64,7 +64,7 @@ class HouseDetails extends StatelessWidget {
                         indicatorRadius: 4,
                         itemSpacing: 10,
                         indicatorBackgroundColor: Colors.grey,
-                        currentIndicatorColor: Colors.black,
+                        currentIndicatorColor: Colors.white,
                       ))),
                   items: houseDetailsController.house.imageUrl.map((url) {
                     return Builder(
@@ -82,12 +82,12 @@ class HouseDetails extends StatelessWidget {
                   }).toList(),
                 ),
               ),
-        
+
               const SizedBox(height: 20),
               _buildInfoCard(
                 icon: Icons.location_on,
                 title: '${houseDetailsController.house.wilaya},',
-                subtitle: houseDetailsController.house.location,
+                subtitle: houseDetailsController.house.adress,
                 onPressed: () => houseDetailsController
                     .launchURL(houseDetailsController.house.location),
               ),
@@ -103,8 +103,16 @@ class HouseDetails extends StatelessWidget {
               const SizedBox(height: 16),
               _buildInfoCard(
                 icon: Icons.language,
-                title: "قم بزيارة موقع الوكالة",
-                subtitle: 'اضغط للدهاب الى الموقع',
+                title: "قم بزيارة المنشور",
+                subtitle: 'اضغط للدهاب الى المنشور',
+                onPressed: () => houseDetailsController
+                    .launchURL(houseDetailsController.house.link),
+              ),
+              const SizedBox(height: 16),
+              _buildInfoCard(
+                icon: Icons.language,
+                title: "وصف",
+                subtitle: houseDetailsController.house.description,
                 onPressed: () => houseDetailsController
                     .launchURL(houseDetailsController.house.link),
               ),

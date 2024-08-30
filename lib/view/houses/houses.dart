@@ -26,18 +26,20 @@ class HouseListPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 3 / 4,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
+        child: GetBuilder<HousesController>(
+          builder: (contx) => GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 3 / 4,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+            ),
+            itemCount: housesController.houses.length,
+            itemBuilder: (context, index) {
+              final house = housesController.houses[index];
+              return HouseCard(house: house);
+            },
           ),
-          itemCount: housesController.houses.length,
-          itemBuilder: (context, index) {
-            final house = housesController.houses[index];
-            return HouseCard(house: house);
-          },
         ),
       ),
     );
