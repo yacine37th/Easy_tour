@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/controller/houses.dart';
-import 'package:flutter_application_1/model/house.dart';
 import 'package:get/get.dart';
 
 import '../../theme/main_colors.dart';
 
-class HouseListPage extends StatelessWidget {
+class TouristicGuides extends StatelessWidget {
+  const TouristicGuides({super.key});
+
   @override
   Widget build(BuildContext context) {
-    HousesController housesController = Get.find();
-    return Scaffold(
+  return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text('المنازل'),
+        title: Text('المرشدين'),
         leading: IconButton(
             onPressed: () {
               Get.back();
