@@ -49,7 +49,7 @@ class Home extends StatelessWidget {
                           return InkWell(
                             onTap: () async {},
                             child: Container(
-                              margin: EdgeInsets.only(left: 2, right: 2),
+                              margin: const EdgeInsets.only(left: 2, right: 2),
                               width: 2000,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
@@ -88,67 +88,62 @@ class Home extends StatelessWidget {
             const SizedBox(
               height: 35,
             ),
+            const SizedBox(height: 16),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  childAspectRatio: 0.85,
-                ),
-                shrinkWrap: true,
-                physics: const BouncingScrollPhysics(),
-                itemCount: homeController.flutterTopicsList.length,
-                itemBuilder: (context, index) {
-                  final topicsData = homeController.flutterTopicsList[index];
-                  return GestureDetector(
-                    onTap: () {
-                      print(topicsData.link);
-                      Get.toNamed(topicsData.link,
-                          arguments: topicsData.topicName);
-                    },
-                    child: Card(
-                      color: AppColors.greenColor,
-                      elevation: 10,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 100,
-                              height: 100,
-                              child: Image.asset(
-                                topicsData.topicIcon,
+                padding: const EdgeInsets.all(16.0),
+                child: ListView.builder(
+                    itemCount: homeController.flutterTopicsList.length,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, index) {
+                      final topicsData =
+                          homeController.flutterTopicsList[index];
+                      return Column(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              print(topicsData.link);
+                              Get.toNamed(topicsData.link,
+                                  arguments: topicsData.topicName);
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 16, horizontal: 12),
+                              decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: 200,
+                                    child: Text(
+                                      topicsData.topicName,
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 20,
+                                  ),
+                                  Image.asset(
+                                    topicsData.topicIcon,
+                                    height: 60,
+                                    width: 60,
+                                  ),
+                                ],
                               ),
                             ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              topicsData.topicName,
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headlineSmall!
-                                  .copyWith(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
+                          ),
+                          const SizedBox(height: 16),
+                        ],
+                      );
+                    })),
           ],
         ));
   }

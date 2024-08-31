@@ -152,15 +152,16 @@ class TouristAgenciesController extends GetxController {
 
       for (var doc in value.docs) {
         TouristAgencyModel touristAgencyModel = TouristAgencyModel(
-          id: doc["touristAgencyId"],
-          name: doc["touristAgencyName"],
-          location: doc["touristAgencyAdress"],
-          imageUrl: doc["touristAgencyIcon"],
-          rating: "", // Assuming you will update rating later
-          phone: doc["touristAgencyPhone"],
-          position: doc["touristAgencyLocationMap"],
-          website: doc["touristAgencyLink"], wilaya: doc["touristAgencyWilaya"],
-        );
+            id: doc["touristAgencyId"],
+            name: doc["touristAgencyName"],
+            location: doc["touristAgencyAdress"],
+            imageUrl: doc["touristAgencyIcon"],
+            rating: "", // Assuming you will update rating later
+            phone: doc["touristAgencyPhone"],
+            position: doc["touristAgencyLocationMap"],
+            website: doc["touristAgencyLink"],
+            wilaya: doc["touristAgencyWilaya"],
+            type: doc["touristAgencyType"]);
 
         // Add the agency to the list
         agencies.add(touristAgencyModel);

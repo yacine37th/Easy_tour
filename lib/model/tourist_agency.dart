@@ -8,6 +8,7 @@ class TouristAgencyModel {
   final String phone;
   final String position;
   final String website;
+  final String type;
 
   TouristAgencyModel({
     required this.id,
@@ -19,5 +20,6 @@ class TouristAgencyModel {
     required this.phone,
     required this.position,
     required this.website,
+    required this.type,
   });
 }
