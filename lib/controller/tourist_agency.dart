@@ -136,6 +136,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../model/tourist_agency.dart';
 import '../theme/main_colors.dart';
@@ -194,29 +195,14 @@ class TouristAgenciesController extends GetxController {
         print('Suppression annulée');
       },
     );
-    // var doc = await FirebaseFirestore.instance.collection("cars").doc(id);
-    // Get.defaultDialog(
-    //   title: 'Confirm',
-    //   middleText: 'Are you sure you want to delete this post ?'.tr,
-    //   textConfirm: 'Yes',
-    //   textCancel: 'No',
-    //   confirmTextColor: Colors.white,
-    //   buttonColor: AppColors
-    //       .kPrimary2, // This line changes the confirm button color to red
-
-    //   onConfirm: () {
-    //     print('Item deleted');
-    //     cars.removeWhere((key, value) => value.id == id);
-    //     update();
-    //     doc.delete();
-    //     Get.back();
-    //   },
-    //   onCancel: () {
-    //     print('Deletion cancelled');
-    //   },
-    // );
+    
   }
-
+ void launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (!await launchUrl(uri)) {
+      throw 'Could not launch $url';
+    }
+  }
   @override
   void onInit() {
     getAllAgencies();

@@ -11,17 +11,17 @@ class HouseListPage extends StatelessWidget {
     HousesController housesController = Get.find();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('المنازل'),
+        backgroundColor: AppColors.greenColor,
+        title: Text('المنازل', style: TextStyle(color: AppColors.whiteColor)),
         leading: IconButton(
             onPressed: () {
               Get.back();
             },
-            icon: const Icon(Icons.arrow_back_ios_new_outlined)),
+            icon: const Icon(Icons.arrow_back_ios_new_outlined , color: Colors.white,)),
         bottom: PreferredSize(
             preferredSize: const Size(0, 0),
             child: Container(
-              color: AppColors.blackColor,
+              color: AppColors.whiteColor,
               height: 1,
             )),
       ),

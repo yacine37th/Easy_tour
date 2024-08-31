@@ -13,17 +13,17 @@ class TouristAgenciesPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
-        backgroundColor: AppColors.whiteColor,
-        title: const Text('الوكالات السياحية'),
+        backgroundColor: AppColors.greenColor,
+        title: const Text('الوكالات السياحية' , style: TextStyle(color: AppColors.whiteColor),),
         leading: IconButton(
             onPressed: () {
               Get.back();
             },
-            icon: const Icon(Icons.arrow_back_ios_new_outlined)),
+            icon: const Icon(Icons.arrow_back_ios_new_outlined , color: Colors.white,)),
         bottom: PreferredSize(
             preferredSize: const Size(0, 0),
             child: Container(
-              color: AppColors.blackColor,
+              color: AppColors.whiteColor,
               height: 1,
             )),
       ),
@@ -54,7 +54,11 @@ class AgencyCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // Get.to(() => AgencyDetailsPage(agency: agency));
-        Get.toNamed("/AgencyDetailsPage", arguments: agency);
+        if (agency.type == "تاشيرة الكترونية") {
+          touristAgenciesController.launchURL(agency.website);
+        } else {
+          Get.toNamed("/AgencyDetailsPage", arguments: agency);
+        }
         // Navigator.push(
         //   context,
         //   MaterialPageRoute(
@@ -71,46 +75,90 @@ class AgencyCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-              borderRadius:
-                  const BorderRadius.vertical(top: Radius.circular(15)),
-              child: Image.network(
-                agency.imageUrl,
-                height: 180,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
+            GetBuilder<TouristAgenciesController>(
+              // init: MyController(),
+              // initState: (_) {},
+              builder: (_) {
+                if (agency.type == "تاشيرة الكترونية") {
+                  return ClipRRect(
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(15)),
+                    child: Image.asset(
+                      "assets/images/visa.png",
+                      height: 180,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  );
+                }
+                return ClipRRect(
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(15)),
+                  child: Image.network(
+                    agency.imageUrl,
+                    height: 180,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                );
+              },
             ),
             Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    agency.name,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    agency.wilaya,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    agency.location,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                ],
+              child: GetBuilder<TouristAgenciesController>(
+                builder: (_) {
+                  if (agency.type == "تاشيرة الكترونية") {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "تاشيرة الكترونية",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          "اضغط للدخول الى الموقع",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                      ],
+                    );
+                  }
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        agency.name,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        agency.wilaya,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        agency.location,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                    ],
+                  );
+                },
               ),
             ),
           ],

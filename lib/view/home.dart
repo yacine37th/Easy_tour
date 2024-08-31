@@ -16,14 +16,14 @@ class Home extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColors.whiteColor,
         appBar: AppBar(
-          backgroundColor: AppColors.whiteColor,
+          backgroundColor: AppColors.greenColor,
           leading: IconButton(
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
               icon: const Icon(
                 Icons.menu,
-                color: Colors.black,
+                color: Colors.white,
               )),
           elevation: 0,
           iconTheme: const IconThemeData(color: Colors.white),
@@ -109,7 +109,7 @@ class Home extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(
                                   vertical: 16, horizontal: 12),
                               decoration: BoxDecoration(
-                                color: Colors.green,
+                                color: AppColors.greenColor,
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               child: Row(

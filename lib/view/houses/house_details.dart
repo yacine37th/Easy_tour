@@ -16,10 +16,10 @@ class HouseDetails extends StatelessWidget {
       appBar: AppBar(
         // title: Text(houseDetailsController.house.name,
         //     style: const TextStyle(color: Colors.black)),
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.greenColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -27,7 +27,7 @@ class HouseDetails extends StatelessWidget {
         bottom: PreferredSize(
             preferredSize: const Size(0, 0),
             child: Container(
-              color: AppColors.blackColor,
+              color: AppColors.whiteColor,
               height: 1,
             )),
       ),

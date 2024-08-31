@@ -14,11 +14,11 @@ class AgencyDetailsPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(agencyDetailsController.agency.name,
-            style: const TextStyle(color: Colors.black)),
-        backgroundColor: Colors.white,
+        style: TextStyle(color: AppColors.whiteColor)),
+        backgroundColor: AppColors.greenColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -26,7 +26,7 @@ class AgencyDetailsPage extends StatelessWidget {
         bottom: PreferredSize(
             preferredSize: const Size(0, 0),
             child: Container(
-              color: AppColors.blackColor,
+              color: AppColors.whiteColor,
               height: 1,
             )),
       ),
