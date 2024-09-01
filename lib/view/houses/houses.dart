@@ -12,12 +12,16 @@ class HouseListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.greenColor,
-        title: Text('المنازل', style: TextStyle(color: AppColors.whiteColor)),
+        title: const Text('المنازل',
+            style: TextStyle(color: AppColors.whiteColor)),
         leading: IconButton(
             onPressed: () {
               Get.back();
             },
-            icon: const Icon(Icons.arrow_back_ios_new_outlined , color: Colors.white,)),
+            icon: const Icon(
+              Icons.arrow_back_ios_new_outlined,
+              color: Colors.white,
+            )),
         bottom: PreferredSize(
             preferredSize: const Size(0, 0),
             child: Container(
@@ -69,7 +73,8 @@ class HouseCard extends StatelessWidget {
           children: [
             Expanded(
               child: ClipRRect(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(15)),
                 child: Image.network(
                   house.imageUrl[0],
                   fit: BoxFit.cover,
@@ -83,8 +88,9 @@ class HouseCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    house.wilaya,
-                    style: TextStyle(
+                    house.wilaya!,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
@@ -98,8 +104,9 @@ class HouseCard extends StatelessWidget {
                   // ),
                   // SizedBox(height: 8),
                   Text(
-                    house.adress,
-                    style: TextStyle(
+                    house.adress!,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
                       color: Colors.grey,
                     ),
                   ),
@@ -127,8 +134,8 @@ class HouseCard extends StatelessWidget {
     return Row(
       children: [
         Icon(icon, size: 16, color: Colors.grey),
-        SizedBox(width: 4),
-        Text('$count', style: TextStyle(color: Colors.grey)),
+        const SizedBox(width: 4),
+        Text('$count', style: const TextStyle(color: Colors.grey)),
       ],
     );
   }

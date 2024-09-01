@@ -1,12 +1,15 @@
 class HouseModel {
-  final String id;
-  final List<dynamic> imageUrl;
-  final String wilaya;
-  final String adress;
-  final String phone;
-  final String link;
-  final String location;
-  final String description;
+  late String? id;
+  late List<dynamic> imageUrl;
+  late String? wilaya;
+  late String? adress;
+  late String? phone;
+  late String? link;
+  late String? location;
+  late String? type;
+  late String? description;
+  late String? stars;
+  late String? name;
 
   HouseModel({
     required this.id,
@@ -17,5 +20,8 @@ class HouseModel {
     required this.link,
     required this.location,
     required this.description,
+    required this.stars,
+    required this.type,
+    required this.name,
   });
 }

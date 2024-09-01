@@ -84,19 +84,36 @@ class HouseDetails extends StatelessWidget {
               ),
 
               const SizedBox(height: 20),
+              GetBuilder<HouseDetailsController>(builder: (context) {
+                if (houseDetailsController.house.type == "فندق") {
+                  return Column(
+                    children: [
+                      _buildInfoCard(
+                        icon: Icons.hotel_rounded,
+                        title: "اسم الفندق",
+                        subtitle:  houseDetailsController.house.name!,
+                        onPressed: () => houseDetailsController
+                            .launchURL(houseDetailsController.house.link!),
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+                  );
+                }
+                return const SizedBox();
+              }),
               _buildInfoCard(
                 icon: Icons.location_on,
                 title: '${houseDetailsController.house.wilaya},',
-                subtitle: houseDetailsController.house.adress,
+                subtitle: houseDetailsController.house.adress!,
                 onPressed: () => houseDetailsController
-                    .launchURL(houseDetailsController.house.location),
+                    .launchURL(houseDetailsController.house.location!),
               ),
               const SizedBox(height: 16),
               _buildInfoCard(
                 icon: Icons.phone,
                 title: 'رقم الهاتف',
                 //
-                subtitle: houseDetailsController.house.phone,
+                subtitle: houseDetailsController.house.phone!,
                 onPressed: () => houseDetailsController
                     .launchURL('tel:${houseDetailsController.house.phone}'),
               ),
@@ -106,16 +123,29 @@ class HouseDetails extends StatelessWidget {
                 title: "قم بزيارة المنشور",
                 subtitle: 'اضغط للدهاب الى المنشور',
                 onPressed: () => houseDetailsController
-                    .launchURL(houseDetailsController.house.link),
+                    .launchURL(houseDetailsController.house.link!),
               ),
               const SizedBox(height: 16),
-              _buildInfoCard(
-                icon: Icons.language,
-                title: "وصف",
-                subtitle: houseDetailsController.house.description,
-                onPressed: () => houseDetailsController
-                    .launchURL(houseDetailsController.house.link),
-              ),
+              GetBuilder<HouseDetailsController>(builder: (context) {
+                if (houseDetailsController.house.type == "فندق") {
+                  return _buildInfoCard(
+                    icon: Icons.stars,
+                    title: "عدد النجوم",
+                    subtitle: houseDetailsController.house.stars == "/"
+                        ? "لا يوجد "
+                        : houseDetailsController.house.stars!,
+                    onPressed: () => houseDetailsController
+                        .launchURL(houseDetailsController.house.link!),
+                  );
+                }
+                return _buildInfoCard(
+                  icon: Icons.language,
+                  title: "وصف",
+                  subtitle: houseDetailsController.house.description!,
+                  onPressed: () => houseDetailsController
+                      .launchURL(houseDetailsController.house.link!),
+                );
+              }),
             ],
           ),
         ),

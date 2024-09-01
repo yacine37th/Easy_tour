@@ -35,6 +35,9 @@ class HousesController extends GetxController {
           link: doc["houseLink"],
           wilaya: doc["houseWilaya"],
           description: doc["houseDescription"],
+          stars: doc["houseStars"],
+          type: doc["houseType"],
+          name: doc["houseName"],
         );
 
         // Add the agency to the list
