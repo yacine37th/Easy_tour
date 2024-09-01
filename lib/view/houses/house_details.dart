@@ -14,8 +14,16 @@ class HouseDetails extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        // title: Text(houseDetailsController.house.name,
-        //     style: const TextStyle(color: Colors.black)),
+        title: GetBuilder<HouseDetailsController>(
+          builder: (contx) {
+            if (houseDetailsController.house.type == "فندق") {
+              return Text(houseDetailsController.house.name!,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(color: Colors.white));
+            }
+            return const SizedBox();
+          },
+        ),
         backgroundColor: AppColors.greenColor,
         elevation: 0,
         leading: IconButton(
@@ -91,7 +99,7 @@ class HouseDetails extends StatelessWidget {
                       _buildInfoCard(
                         icon: Icons.hotel_rounded,
                         title: "اسم الفندق",
-                        subtitle:  houseDetailsController.house.name!,
+                        subtitle: houseDetailsController.house.name!,
                         onPressed: () => houseDetailsController
                             .launchURL(houseDetailsController.house.link!),
                       ),

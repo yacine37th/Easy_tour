@@ -13,38 +13,48 @@ class SearchHotelsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
           icon: const Icon(
             Icons.arrow_back_ios_outlined,
-            color: AppColors.kPrimary2,
+            color: AppColors.greenColor,
           ),
         ),
-        title: TextField(
-          decoration: InputDecoration(
-            hintText: "Search for a product".tr,
-            hintStyle: const TextStyle(fontSize: 15),
-            prefixIcon: const Icon(Icons.search),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+        title: Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: "ابحث عن الفنادق",
+              hintStyle: const TextStyle(fontSize: 15),
+              prefixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
+            onChanged: (value) {
+              controller.getInputSearch(value);
+              if (value.isNotEmpty) {
+                controller.getSearched(value);
+              } else {
+                controller.professionals.clear();
+                controller.addedIds.clear();
+              }
+            },
           ),
-          onChanged: (value) {
-            controller.getInputSearch(value);
-            if (value.isNotEmpty) {
-              controller.getSearched(value);
-            } else {
-              controller.professionals.clear();
-              controller.addedIds.clear();
-            }
-          },
         ),
+        bottom: PreferredSize(
+            preferredSize: const Size(0, 0),
+            child: Container(
+              color: AppColors.blackColor,
+              height: 0.6,
+            )),
       ),
       body: Obx(() {
         if (controller.isFetching.value) {
           return const Center(child: CircularProgressIndicator());
         } else if (controller.professionals.isEmpty) {
-          return Center(child: Text("There are no results for the search".tr));
+          return const Center(child: Text("لا يوجد نتيجة"));
         } else {
           return GridView.builder(
             padding: const EdgeInsets.all(10.0),
@@ -52,7 +62,7 @@ class SearchHotelsPage extends StatelessWidget {
               crossAxisCount: 2, // Number of columns in the grid
               crossAxisSpacing: 10.0,
               mainAxisSpacing: 10.0,
-              childAspectRatio: 0.75, // Adjust the aspect ratio as needed
+              childAspectRatio: 0.75, 
             ),
             itemCount: controller.professionals.length,
             itemBuilder: (context, index) {
