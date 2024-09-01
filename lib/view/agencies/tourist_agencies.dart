@@ -87,7 +87,7 @@ class AgencyCard extends StatelessWidget {
                       "assets/images/visa.png",
                       height: 180,
                       width: double.infinity,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                     ),
                   );
                 }
