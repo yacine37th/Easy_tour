@@ -26,6 +26,7 @@ import 'utils/verify_email_bindings.dart';
 import 'view/email_verification.dart';
 import 'view/forgot_password.dart';
 import 'view/houses/house_details.dart';
+import 'view/houses/search_product_page.dart';
 import 'view/sign_up.dart';
 import 'view/touristic_guide/touristic_guide_details.dart';
 import 'view/touristic_guide/touristic_guides.dart';
@@ -130,6 +131,11 @@ class MyApp extends StatelessWidget {
           binding: TouristicGuideDetailsBinding(),
         ),
         //
+        GetPage(
+          name: "/SearchHotelsPage",
+          page: () => SearchHotelsPage(),
+          // binding: CartBinding(),
+        ),
         // GetPage(
         //   name: "/AddForm",
         //   page: () => const AddForm(),

@@ -28,6 +28,16 @@ class HouseListPage extends StatelessWidget {
               color: AppColors.whiteColor,
               height: 1,
             )),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: IconButton(
+                onPressed: () {
+                  Get.toNamed('/SearchHotelsPage');
+                },
+                icon: const Icon(Icons.search, color: Colors.white , size: 30,)),
+          ),
+        ],
       ),
       backgroundColor: Colors.white,
       body: Padding(
@@ -52,6 +62,7 @@ class HouseListPage extends StatelessWidget {
   }
 }
 
+//
 class HouseCard extends StatelessWidget {
   final HouseModel house;
 
