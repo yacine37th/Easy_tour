@@ -138,6 +138,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../model/publicity.dart';
 import '../model/tourist_agency.dart';
 import '../theme/main_colors.dart';
 
@@ -195,14 +196,20 @@ class TouristAgenciesController extends GetxController {
         print('Suppression annulée');
       },
     );
-    
   }
- void launchURL(String url) async {
+
+  void launchURL(String url) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(uri)) {
       throw 'Could not launch $url';
     }
   }
+
+  Map<String, PublicityModel> publicities = {
+    "1": PublicityModel(id: "", imageUrl: "assets/images/visa.png", url: ""),
+    "2": PublicityModel(id: "", imageUrl: "assets/images/visa2.png", url: ""),
+    "3": PublicityModel(id: "", imageUrl: "assets/images/visa3.png", url: ""),
+  };
   @override
   void onInit() {
     getAllAgencies();
