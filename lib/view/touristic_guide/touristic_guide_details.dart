@@ -67,7 +67,7 @@ class TouristicGuideDetails extends StatelessWidget {
               const SizedBox(height: 20),
               _buildInfoCard(
                 icon: Icons.location_city,
-                title: 'المكان',
+                title: 'Place'.tr,
                 subtitle:
                     touristicGuideDetailsController.touristicGuideModel.adress,
                 onPressed: () => {},

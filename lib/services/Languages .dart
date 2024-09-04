@@ -10,6 +10,7 @@ class Languages implements Translations {
         "fr": {
           "ChangeLanguage": "Changer de langue",
           "Language": "Les langues",
+          "Place": "Places",
           "francais": "Français",
           "arab": "Arabe",
           "Welcome to": "Bienvenue de nouveau !",
@@ -243,7 +244,8 @@ class Languages implements Translations {
           "No stars": "لا يوجد ",
           "Des": "وصف",
           "Electronic visa": "تاشيرة الكترونية",
-          "Name": 'الاسم و اللقب'
+          "Name": 'الاسم و اللقب',
+          "Place": "المكان",
         }
       };
   static Locale initLang() {
