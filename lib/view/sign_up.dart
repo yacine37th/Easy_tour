@@ -64,7 +64,7 @@ class SignUp extends StatelessWidget {
                         errorMaxLines: 2,
                         prefixIcon: const Icon(
                           Icons.person_2_outlined,
-                          color: AppColors.kPrimary2,
+                          color: AppColors.greenColor,
                           size: 25,
                         ),
                         contentPadding: const EdgeInsets.symmetric(
@@ -77,7 +77,7 @@ class SignUp extends StatelessWidget {
                         filled: true,
                         focusedBorder: OutlineInputBorder(
                           borderSide:
-                              const BorderSide(color: AppColors.kPrimary2),
+                              const BorderSide(color: AppColors.greenColor),
                           borderRadius: BorderRadius.circular(40),
                         ),
                         border: OutlineInputBorder(
@@ -132,7 +132,7 @@ class SignUp extends StatelessWidget {
                         filled: true,
                         focusedBorder: OutlineInputBorder(
                           borderSide:
-                              const BorderSide(color: AppColors.kPrimary2),
+                              const BorderSide(color: AppColors.greenColor),
                           borderRadius: BorderRadius.circular(40),
                         ),
                         border: OutlineInputBorder(
@@ -179,7 +179,7 @@ class SignUp extends StatelessWidget {
                               icon: contx.showPassword
                                   ? const Icon(Icons.visibility)
                                   : const Icon(Icons.visibility_off)),
-                          suffixIconColor: AppColors.kPrimary2,
+                          suffixIconColor: AppColors.greenColor,
                           contentPadding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 16),
                           enabledBorder: OutlineInputBorder(
@@ -192,7 +192,7 @@ class SignUp extends StatelessWidget {
                           filled: true,
                           focusedBorder: OutlineInputBorder(
                             borderSide:
-                                const BorderSide(color: AppColors.kPrimary2),
+                                const BorderSide(color: AppColors.greenColor),
                             borderRadius: BorderRadius.circular(40),
                           ),
                           border: OutlineInputBorder(

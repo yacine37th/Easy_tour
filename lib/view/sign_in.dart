@@ -56,7 +56,7 @@ class SignIn extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.w300,
-                      color: AppColors.goldenColor,
+                      color: AppColors.greenColor,
                     ),
                   ),
                 ),
@@ -157,7 +157,7 @@ class SignIn extends StatelessWidget {
                                   icon: contx.showPassword
                                       ? const Icon(Icons.visibility)
                                       : const Icon(Icons.visibility_off)),
-                              suffixIconColor: AppColors.kPrimary2,
+                              suffixIconColor: AppColors.greenColor,
                               contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 16),
                               enabledBorder: OutlineInputBorder(
@@ -169,7 +169,7 @@ class SignIn extends StatelessWidget {
                               filled: true,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: AppColors.kPrimary2),
+                                    color: AppColors.greenColor),
                                 borderRadius: BorderRadius.circular(40),
                               ),
                               border: OutlineInputBorder(
@@ -199,7 +199,7 @@ class SignIn extends StatelessWidget {
                               style: ButtonStyle(
                                   overlayColor: WidgetStateColor.resolveWith(
                                       (states) =>
-                                          AppColors.kPrimary2.withOpacity(0.1)),
+                                          AppColors.greenColor.withOpacity(0.1)),
                                   shape: WidgetStateProperty.all(
                                       RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(100),
@@ -207,7 +207,7 @@ class SignIn extends StatelessWidget {
                               child: const Text(
                                 "نسيت كلمة المرور ؟",
                                 style: TextStyle(
-                                    color: AppColors.kPrimary2, fontSize: 14),
+                                    color: AppColors.greenColor, fontSize: 14),
                               ),
                             )
                           ],
@@ -225,10 +225,10 @@ class SignIn extends StatelessWidget {
                             },
                             style: ButtonStyle(
                                 foregroundColor: WidgetStateProperty.all(
-                                  AppColors.goldenColor,
+                                  AppColors.greenColor,
                                 ),
                                 backgroundColor: WidgetStateProperty.all(
-                                  AppColors.goldenColor,
+                                  AppColors.greenColor,
                                 ),
                                 overlayColor: WidgetStateColor.resolveWith(
                                     (states) => Colors.white.withOpacity(0.1)),
@@ -237,7 +237,7 @@ class SignIn extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(100),
                                         side: const BorderSide(
-                                          color: AppColors.goldenColor,
+                                          color: AppColors.greenColor,
                                         )))),
                             child: Card(
                               elevation: 0,
@@ -277,7 +277,7 @@ class SignIn extends StatelessWidget {
                                 'التسجيل',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: AppColors.goldenColor,
+                                  color: AppColors.greenColor,
                                 ),
                               ),
                             ),

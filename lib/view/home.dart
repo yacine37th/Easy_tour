@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controller/home.dart';
+import 'package:flutter_application_1/view/drawer.dart';
 import 'package:get/get.dart';
 
 import '../theme/colors.dart';
@@ -15,16 +16,17 @@ class Home extends StatelessWidget {
     HomeController homeController = Get.find();
     return Scaffold(
         backgroundColor: AppColors.whiteColor,
+        drawer: AppDrawer(),
         appBar: AppBar(
           backgroundColor: AppColors.greenColor,
-          leading: IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.white,
-              )),
+          // leading: IconButton(
+          //     onPressed: () {
+          //       Scaffold.of(context).openDrawer();
+          //     },
+          //     icon: const Icon(
+          //       Icons.menu,
+          //       color: Colors.white,
+          //     )),
           elevation: 0,
           iconTheme: const IconThemeData(color: Colors.white),
           bottom: PreferredSize(

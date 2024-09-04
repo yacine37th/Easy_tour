@@ -338,7 +338,7 @@ class EmailIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return const ImageIcon(
       size: 15,
-      color: AppColors.kPrimary2,
+      color: AppColors.greenColor,
       Svg(
         "assets/icons/email_icon.svg",
       ),
@@ -355,7 +355,7 @@ class PasswordKeyIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return const ImageIcon(
       size: 15,
-      color: AppColors.kPrimary2,
+      color: AppColors.greenColor,
       Svg("assets/icons/password_key_icon.svg"),
     );
   }

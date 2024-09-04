@@ -64,7 +64,7 @@ class EmailVerification extends StatelessWidget {
                         AppColors.greenColor,
                       ),
                       overlayColor: MaterialStateColor.resolveWith((states) =>
-                          AppColors.kPrimary2Onpress.withOpacity(0.2)),
+                          AppColors.greenColor.withOpacity(0.2)),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(100),
                           side: const BorderSide(
