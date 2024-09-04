@@ -125,7 +125,10 @@ class Languages implements Translations {
           "No stars": "Pas d'étoiles",
           "Des": "Description",
           "Electronic visa": "Visa électronique",
-          "Name": "Nom et Prénom"
+          "Name": "Nom et Prénom",
+          "Contact us": "Contacter nous",
+          "Know us": "Connaissez nous",
+          "web site": "Nos site web"
         },
         "ar": {
           "ChangeLanguage": "تغيير اللغة",
@@ -246,6 +249,9 @@ class Languages implements Translations {
           "Electronic visa": "تاشيرة الكترونية",
           "Name": 'الاسم و اللقب',
           "Place": "المكان",
+          "Contact us": "تواصل معنا",
+          "Know us": "تعرف علينا",
+          "web site": "موقعنا الالكتروني"
         }
       };
   static Locale initLang() {

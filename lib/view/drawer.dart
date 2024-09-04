@@ -8,7 +8,6 @@ import '../../../main.dart';
 import 'widgets.dart';
 
 class AppDrawer extends StatelessWidget {
-
   AppDrawer({super.key});
 
   @override
@@ -113,30 +112,42 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.phone),
             title: Text(
-              "تواصل معنا".tr,
+              "Contact us".tr,
               style: const TextStyle(
                 fontSize: 18.0,
               ),
             ),
             onTap: () {
+              controller.launchURL('tel:+213660338334');
               // controller.switchBetweenScreens(0);
-              Get.back();
             },
           ),
           ListTile(
             leading: const Icon(Icons.info),
             title: Text(
-              "تعرف علينا".tr,
+              "Know us".tr,
               style: const TextStyle(
                 fontSize: 18.0,
               ),
             ),
             onTap: () {
-              // controller.switchBetweenScreens(1);
-              Get.back();
+              controller.aboutUs();
+              // Get.back();
             },
           ),
-
+          ListTile(
+            leading: const Icon(Icons.web),
+            title: Text(
+              "web site".tr,
+              style: const TextStyle(
+                fontSize: 18.0,
+              ),
+            ),
+            onTap: () {
+              controller.launchURL('https://easytour2.webnode.fr');
+              // Get.back();
+            },
+          ),
           ListTile(
             leading: const Icon(Icons.language),
             title: Text(
