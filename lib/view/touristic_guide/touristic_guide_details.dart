@@ -49,7 +49,7 @@ class TouristicGuideDetails extends StatelessWidget {
               const SizedBox(height: 20),
               _buildInfoCard(
                 icon: Icons.person,
-                title: 'الاسم و اللقب',
+                title: "Name".tr,
                 subtitle:
                     touristicGuideDetailsController.touristicGuideModel.name,
                 onPressed: () => {},
@@ -57,7 +57,7 @@ class TouristicGuideDetails extends StatelessWidget {
               const SizedBox(height: 20),
               _buildInfoCard(
                 icon: Icons.email,
-                title: 'الايميل',
+                title: 'E-mail'.tr,
                 subtitle:
                     touristicGuideDetailsController.touristicGuideModel.email,
                 onPressed: () => touristicGuideDetailsController.launchURL(
@@ -75,7 +75,7 @@ class TouristicGuideDetails extends StatelessWidget {
               const SizedBox(height: 20),
               _buildInfoCard(
                 icon: Icons.language_sharp,
-                title: 'اللغات',
+                title: 'Language'.tr,
                 subtitle: touristicGuideDetailsController
                     .touristicGuideModel.languages,
                 onPressed: () => {},
@@ -83,7 +83,7 @@ class TouristicGuideDetails extends StatelessWidget {
               const SizedBox(height: 20),
               _buildInfoCard(
                 icon: Icons.phone,
-                title: 'رقم الهاتف',
+                title: "Phone".tr,
                 subtitle:
                     touristicGuideDetailsController.touristicGuideModel.phone,
                 onPressed: () => touristicGuideDetailsController.launchURL(
@@ -92,7 +92,7 @@ class TouristicGuideDetails extends StatelessWidget {
               const SizedBox(height: 20),
               _buildInfoCard(
                   icon: Icons.language,
-                  title: "وصف",
+                  title: "Des".tr,
                   subtitle: touristicGuideDetailsController
                       .touristicGuideModel.description,
                   onPressed: () {}),

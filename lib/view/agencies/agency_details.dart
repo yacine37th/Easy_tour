@@ -14,7 +14,7 @@ class AgencyDetailsPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(agencyDetailsController.agency.name,
-        style: TextStyle(color: AppColors.whiteColor)),
+            style: TextStyle(color: AppColors.whiteColor)),
         backgroundColor: AppColors.greenColor,
         elevation: 0,
         leading: IconButton(
@@ -55,7 +55,7 @@ class AgencyDetailsPage extends StatelessWidget {
             const SizedBox(height: 16),
             _buildInfoCard(
               icon: Icons.phone,
-              title: 'رقم الهاتف',
+              title: "Phone".tr,
               //
               subtitle: agencyDetailsController.agency.phone,
               onPressed: () => agencyDetailsController
@@ -64,8 +64,8 @@ class AgencyDetailsPage extends StatelessWidget {
             const SizedBox(height: 16),
             _buildInfoCard(
               icon: Icons.language,
-              title: "قم بزيارة موقع الوكالة",
-              subtitle: 'اضغط للدهاب الى الموقع',
+              title: "Visit the link".tr,
+              subtitle: "Click to go".tr,
               onPressed: () => agencyDetailsController
                   .launchURL(agencyDetailsController.agency.website),
             ),

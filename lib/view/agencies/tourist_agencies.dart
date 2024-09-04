@@ -17,9 +17,9 @@ class TouristAgenciesPage extends StatelessWidget {
       backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
         backgroundColor: AppColors.greenColor,
-        title: const Text(
-          'الوكالات السياحية',
-          style: TextStyle(color: AppColors.whiteColor),
+        title: Text(
+          "Tourist Agencies".tr,
+          style: const TextStyle(color: AppColors.whiteColor),
         ),
         leading: IconButton(
             onPressed: () {
@@ -162,16 +162,16 @@ class AgencyCard extends StatelessWidget {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          "تاشيرة الكترونية",
-                          style: TextStyle(
+                        Text(
+                          "Electronic visa".tr,
+                          style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          "اضغط للدخول الى الموقع",
+                          "Click to go".tr,
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.grey[600],

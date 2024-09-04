@@ -14,12 +14,16 @@ class TouristicGuides extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.greenColor,
-        title: Text('المرشدين',style: TextStyle(color: AppColors.whiteColor)),
+        title: Text('Touristic guide'.tr,
+            style: const TextStyle(color: AppColors.whiteColor)),
         leading: IconButton(
             onPressed: () {
               Get.back();
             },
-            icon: const Icon(Icons.arrow_back_ios_new_outlined , color: Colors.white,)),
+            icon: const Icon(
+              Icons.arrow_back_ios_new_outlined,
+              color: Colors.white,
+            )),
         bottom: PreferredSize(
             preferredSize: const Size(0, 0),
             child: Container(

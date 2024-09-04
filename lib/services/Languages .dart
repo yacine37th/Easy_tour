@@ -9,6 +9,7 @@ class Languages implements Translations {
   Map<String, Map<String, String>> get keys => {
         "fr": {
           "ChangeLanguage": "Changer de langue",
+          "Language": "Les langues",
           "francais": "Français",
           "arab": "Arabe",
           "Welcome to": "Bienvenue de nouveau !",
@@ -121,10 +122,14 @@ class Languages implements Translations {
           "Click to go": "Cliquer pour visiter le lien",
           "Stars number": "Nombres d'étoiles",
           "No stars": "Pas d'étoiles",
-          "Des": "Description"
+          "Des": "Description",
+          "Electronic visa": "Visa électronique",
+          "Name": "Nom et Prénom"
         },
         "ar": {
           "ChangeLanguage": "تغيير اللغة",
+          "Language": "اللغات",
+
           "francais": "الفرنسية",
           "english": "الإنجليزية",
           "arab": "العربية",
@@ -236,7 +241,9 @@ class Languages implements Translations {
           "Click to go": 'اضغط للدهاب الى المنشور',
           "Stars number": "عدد النجوم",
           "No stars": "لا يوجد ",
-          "Des": "وصف"
+          "Des": "وصف",
+          "Electronic visa": "تاشيرة الكترونية",
+          "Name": 'الاسم و اللقب'
         }
       };
   static Locale initLang() {
