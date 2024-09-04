@@ -25,7 +25,7 @@ class SearchHotelsPage extends StatelessWidget {
           padding: const EdgeInsets.all(18.0),
           child: TextField(
             decoration: InputDecoration(
-              hintText: "ابحث عن الفنادق",
+              hintText: "Search for hotel".tr,
               hintStyle: const TextStyle(fontSize: 15),
               prefixIcon: const Icon(Icons.search),
               border: OutlineInputBorder(
@@ -54,7 +54,7 @@ class SearchHotelsPage extends StatelessWidget {
         if (controller.isFetching.value) {
           return const Center(child: CircularProgressIndicator());
         } else if (controller.professionals.isEmpty) {
-          return const Center(child: Text("لا يوجد نتيجة"));
+          return Center(child: Text("There are no results for the search".tr));
         } else {
           return GridView.builder(
             padding: const EdgeInsets.all(10.0),
@@ -62,7 +62,7 @@ class SearchHotelsPage extends StatelessWidget {
               crossAxisCount: 2, // Number of columns in the grid
               crossAxisSpacing: 10.0,
               mainAxisSpacing: 10.0,
-              childAspectRatio: 0.75, 
+              childAspectRatio: 0.75,
             ),
             itemCount: controller.professionals.length,
             itemBuilder: (context, index) {

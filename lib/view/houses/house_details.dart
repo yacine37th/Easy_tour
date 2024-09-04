@@ -98,7 +98,7 @@ class HouseDetails extends StatelessWidget {
                     children: [
                       _buildInfoCard(
                         icon: Icons.hotel_rounded,
-                        title: "اسم الفندق",
+                        title: "Hotel Name".tr,
                         subtitle: houseDetailsController.house.name!,
                         onPressed: () => houseDetailsController
                             .launchURL(houseDetailsController.house.link!),
@@ -119,7 +119,7 @@ class HouseDetails extends StatelessWidget {
               const SizedBox(height: 16),
               _buildInfoCard(
                 icon: Icons.phone,
-                title: 'رقم الهاتف',
+                title: "Phone".tr,
                 //
                 subtitle: houseDetailsController.house.phone!,
                 onPressed: () => houseDetailsController
@@ -128,8 +128,8 @@ class HouseDetails extends StatelessWidget {
               const SizedBox(height: 16),
               _buildInfoCard(
                 icon: Icons.language,
-                title: "قم بزيارة المنشور",
-                subtitle: 'اضغط للدهاب الى المنشور',
+                title: "Visit the link".tr,
+                subtitle: "Click to go".tr,
                 onPressed: () => houseDetailsController
                     .launchURL(houseDetailsController.house.link!),
               ),
@@ -138,9 +138,9 @@ class HouseDetails extends StatelessWidget {
                 if (houseDetailsController.house.type == "فندق") {
                   return _buildInfoCard(
                     icon: Icons.stars,
-                    title: "عدد النجوم",
+                    title: "Stars number".tr,
                     subtitle: houseDetailsController.house.stars == "/"
-                        ? "لا يوجد "
+                        ? "No stars"
                         : houseDetailsController.house.stars!,
                     onPressed: () => houseDetailsController
                         .launchURL(houseDetailsController.house.link!),
@@ -148,7 +148,7 @@ class HouseDetails extends StatelessWidget {
                 }
                 return _buildInfoCard(
                   icon: Icons.language,
-                  title: "وصف",
+                  title: "Des".tr,
                   subtitle: houseDetailsController.house.description!,
                   onPressed: () => houseDetailsController
                       .launchURL(houseDetailsController.house.link!),

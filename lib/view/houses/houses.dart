@@ -12,8 +12,8 @@ class HouseListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.greenColor,
-        title: const Text('المنازل',
-            style: TextStyle(color: AppColors.whiteColor)),
+        title: Text('Houses'.tr,
+            style: const TextStyle(color: AppColors.whiteColor)),
         leading: IconButton(
             onPressed: () {
               Get.back();
@@ -35,7 +35,11 @@ class HouseListPage extends StatelessWidget {
                 onPressed: () {
                   Get.toNamed('/SearchHotelsPage');
                 },
-                icon: const Icon(Icons.search, color: Colors.white , size: 30,)),
+                icon: const Icon(
+                  Icons.search,
+                  color: Colors.white,
+                  size: 30,
+                )),
           ),
         ],
       ),

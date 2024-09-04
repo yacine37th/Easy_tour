@@ -146,7 +146,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              // controller.setLanguage();
+              controller.setLanguage();
             },
           ),
           ListTile(

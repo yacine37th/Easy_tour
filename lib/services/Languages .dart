@@ -109,7 +109,19 @@ class Languages implements Translations {
           "costumer comments": "Les commentaires",
           "no comments": "Pas de commantaires",
           "Réserver": "Réserver",
-          "Order placed successfully": "Commande passée avec succès"
+          "Order placed successfully": "Commande passée avec succès",
+          "Renting houses": "Location de maisons",
+          "Tourist Agencies": "Agences de Tourisme",
+          "Touristic guide": "Guide touristique",
+          "Houses": "Maisons",
+          "Search for hotel": "Chercher un hotel",
+          "Hotel Name": "Nom du hotel",
+          "Phone": "Numéo de téléphone",
+          "Visit the link": "visiter le lien",
+          "Click to go": "Cliquer pour visiter le lien",
+          "Stars number": "Nombres d'étoiles",
+          "No stars": "Pas d'étoiles",
+          "Des": "Description"
         },
         "ar": {
           "ChangeLanguage": "تغيير اللغة",
@@ -211,8 +223,20 @@ class Languages implements Translations {
           "costumer comments": "مراجعات الزبائن",
           "no comments": "لا توجد مراجعات",
           "Réserver": "حجز موعد",
-          "Order placed successfully": "تم تقديم الطلب بنجاح"
+          "Order placed successfully": "تم تقديم الطلب بنجاح",
           // "add comment"
+          "Renting houses": "كراء المنازل",
+          "Tourist Agencies": "الوكالات السياحية",
+          "Touristic guide": "المرشد السياحي",
+          "Houses": "المنازل",
+          "Search for hotel": "ابحث عن الفنادق",
+          "Hotel Name": "اسم الفندق",
+          "Phone": 'رقم الهاتف',
+          "Visit the link": "قم بزيارة المنشور",
+          "Click to go": 'اضغط للدهاب الى المنشور',
+          "Stars number": "عدد النجوم",
+          "No stars": "لا يوجد ",
+          "Des": "وصف"
         }
       };
   static Locale initLang() {
@@ -223,7 +247,7 @@ class Languages implements Translations {
       //   return Locale('en');
       // } else {
       // return Get.deviceLocale!;
-      return const Locale('ar');
+      return const Locale('fr');
       // }
     } else {
       return Locale(MainFunctions.sharredPrefs!.getString("codeLang")!);
