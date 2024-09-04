@@ -41,9 +41,9 @@ class ForgotPassword extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "نسيت كلمة المرور ؟",
-                    style: TextStyle(
+                  Text(
+                    "Forgot your password ?".tr,
+                    style: const TextStyle(
                         fontFamily: 'Cairo',
                         fontWeight: FontWeight.bold,
                         fontSize: 19),
@@ -51,9 +51,10 @@ class ForgotPassword extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    "أدخل بريدك الإلكتروني ، وسنرسل لك رابطا لإدخال كلمة مرور جديدة.",
-                    style: TextStyle(fontSize: 17),
+                  Text(
+                    "Enter your email, and we will send you a link to enter a new password."
+                        .tr,
+                    style: const TextStyle(fontSize: 17),
                   ),
                   const SizedBox(
                     height: 25,
@@ -68,12 +69,12 @@ class ForgotPassword extends StatelessWidget {
                           keyboardType: TextInputType.emailAddress,
                           validator: (val) {
                             if (val!.isEmpty) {
-                              return "الرجاء إدخال بريد إلكتروني";
+                              return "Please enter an email".tr;
                             }
                             if (!RegExp(
                                     r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
                                 .hasMatch(val)) {
-                              return "الرجاء إدخال بريد إلكتروني صحيح";
+                              return "Please enter a valid email".tr;
                             }
                             return null;
                           },
@@ -82,7 +83,7 @@ class ForgotPassword extends StatelessWidget {
                                 .inputfgbEmail(emailAddress);
                           },
                           decoration: InputDecoration(
-                            hintText: 'البريد الإلكتروني',
+                            hintText: "E-mail".tr,
                             errorMaxLines: 2,
                             prefixIcon: const EmailIcon(),
                             contentPadding: const EdgeInsets.symmetric(
@@ -133,18 +134,18 @@ class ForgotPassword extends StatelessWidget {
                             }
                           },
                           style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all(
+                              foregroundColor: WidgetStateProperty.all(
                                 AppColors.greenColor,
                               ),
-                              backgroundColor: MaterialStateProperty.all(
+                              backgroundColor: WidgetStateProperty.all(
                                 AppColors.greenColor,
                               ),
-                              overlayColor: MaterialStateColor.resolveWith(
+                              overlayColor: WidgetStateColor.resolveWith(
                                   (states) => Colors.white.withOpacity(0.1)),
-                              shape: MaterialStateProperty.all(
+                              shape: WidgetStateProperty.all(
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(100),
-                                      side: BorderSide(
+                                      side: const BorderSide(
                                         color: AppColors.greenColor,
                                       )))),
                           child: Card(
@@ -161,9 +162,9 @@ class ForgotPassword extends StatelessWidget {
                                 // color: AppColors.kPrimary,
                                 borderRadius: BorderRadius.circular(30),
                               ),
-                              child: const Text(
-                                "إرسال الرابط",
-                                style: TextStyle(
+                              child: Text(
+                                "Send link".tr,
+                                style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 19,
                                 ),
@@ -181,9 +182,10 @@ class ForgotPassword extends StatelessWidget {
                   Text.rich(TextSpan(
                       style: const TextStyle(fontFamily: 'Cairo', fontSize: 19),
                       children: [
-                        const TextSpan(
+                        TextSpan(
                           text:
-                              "تم إرسال بريد إلكتروني لتغيير كلمة المرور لحسابك: ",
+                              "An email has been sent to change the password to your account:"
+                                  .tr,
                         ),
                         TextSpan(
                             text: forgotPasswordController.fgpEmail.toString())
@@ -220,9 +222,9 @@ class ForgotPassword extends StatelessWidget {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        child: const Text(
-                          "متابعة",
-                          style: TextStyle(
+                        child: Text(
+                          "Continue".tr,
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 19,
                           ),

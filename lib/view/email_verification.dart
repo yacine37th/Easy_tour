@@ -42,8 +42,10 @@ class EmailVerification extends StatelessWidget {
                       Lottie.asset('assets/animation/email-verification.json'),
                 ),
               ),
-              const Text("تم إرسال رسالة تحقق إلى عنوان بريدك الإلكتروني",
-                  style: TextStyle(
+              Text(
+                  "A verification message has been sent to your email address"
+                      .tr,
+                  style: const TextStyle(
                     fontSize: 20,
                   ),
                   textAlign: TextAlign.center),
@@ -63,8 +65,8 @@ class EmailVerification extends StatelessWidget {
                       backgroundColor: MaterialStateProperty.all(
                         AppColors.greenColor,
                       ),
-                      overlayColor: MaterialStateColor.resolveWith((states) =>
-                          AppColors.greenColor.withOpacity(0.2)),
+                      overlayColor: MaterialStateColor.resolveWith(
+                          (states) => AppColors.greenColor.withOpacity(0.2)),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(100),
                           side: const BorderSide(
@@ -83,9 +85,9 @@ class EmailVerification extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: const Text(
-                        "ارسال",
-                        style: TextStyle(
+                      child: Text(
+                        "Resend".tr,
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 19,
                         ),

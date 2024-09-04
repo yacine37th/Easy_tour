@@ -41,7 +41,7 @@ class Languages implements Translations {
           "A verification message has been sent to your email address":
               "Un message de vérification a été envoyé à votre adresse e-mail",
           "Welcome to the Fixell application-Create a new account":
-              "Bienvenue dans l'application Fixell\nCréer un nouveau compte",
+              "Bienvenue dans l'application Khadamat\nCréer un nouveau compte",
           "Please enter your username":
               "Veuillez entrer votre nom d'utilisateur",
           " username": "Nom d'utilisateur",
@@ -146,7 +146,7 @@ class Languages implements Translations {
           "A verification message has been sent to your email address":
               "تم إرسال رسالة تحقق إلى عنوان بريدك الإلكتروني",
           "Welcome to the Fixell application-Create a new account":
-              "مرحبًا بك في تطبيق فيكسال\nإنشاء حساب جديد",
+              "مرحبًا بك في تطبيق خدمات\nإنشاء حساب جديد",
           "Please enter your username": "يرجى إدخال اسم المستخدم",
           " username": "اسم المستخدم",
           "The Username field must contain at least 3 characters":

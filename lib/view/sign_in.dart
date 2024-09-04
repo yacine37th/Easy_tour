@@ -41,19 +41,19 @@ class SignIn extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10.0),
-                const Center(
+                Center(
                   child: Text(
-                    'مرحباً بك مرة أخرى!',
-                    style: TextStyle(
+                    "Welcome to".tr,
+                    style: const TextStyle(
                       fontSize: 23.0,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
-                const Center(
+                Center(
                   child: Text(
-                    "سجل الدخول إلى حسابك وابدأ!",
-                    style: TextStyle(
+                    "Login to Your Account".tr,
+                    style: const TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.w300,
                       color: AppColors.greenColor,
@@ -82,18 +82,18 @@ class SignIn extends StatelessWidget {
                           },
                           validator: (val) {
                             if (val!.isEmpty) {
-                              return "من فضلك املأ البريد الإلكتروني";
+                              return "Please enter an email".tr;
                             }
                             if (!RegExp(
                                     r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
                                 .hasMatch(val)) {
-                              return "من فضلك املأ بريد إلكتروني صحيح";
+                              return "Please enter a valid email".tr;
                             }
                             return null;
                           },
                           initialValue: signInController.userEmailAddress,
                           decoration: InputDecoration(
-                            hintText: 'البريد الإكتروني',
+                            hintText: "E-mail".tr,
                             errorMaxLines: 2,
                             prefixIcon: const EmailIcon(),
                             contentPadding: const EdgeInsets.symmetric(
@@ -107,8 +107,8 @@ class SignIn extends StatelessWidget {
                             fillColor: AppColors.inputBg,
                             filled: true,
                             focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  const BorderSide(color: AppColors.goldenColor),
+                              borderSide: const BorderSide(
+                                  color: AppColors.goldenColor),
                               borderRadius: BorderRadius.circular(40),
                             ),
                             border: OutlineInputBorder(
@@ -141,13 +141,21 @@ class SignIn extends StatelessWidget {
                             },
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return "من فضلك املأ كلمة المرور";
+                                return "Please enter your password".tr;
+                              }
+                              if (value.length > 20) {
+                                return "The password cannot contain more than 20 characters"
+                                    .tr;
+                              }
+                              if (value.length < 8) {
+                                return "The password cannot contain less than 8 characters"
+                                    .tr;
                               }
                               return null;
                             },
                             initialValue: signInController.userPassword,
                             decoration: InputDecoration(
-                              hintText: 'كلمة السر',
+                              hintText: "Password".tr,
                               errorMaxLines: 2,
                               prefixIcon: const PasswordKeyIcon(),
                               suffixIcon: IconButton(
@@ -198,15 +206,15 @@ class SignIn extends StatelessWidget {
                               },
                               style: ButtonStyle(
                                   overlayColor: WidgetStateColor.resolveWith(
-                                      (states) =>
-                                          AppColors.greenColor.withOpacity(0.1)),
+                                      (states) => AppColors.greenColor
+                                          .withOpacity(0.1)),
                                   shape: WidgetStateProperty.all(
                                       RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(100),
                                   ))),
-                              child: const Text(
-                                "نسيت كلمة المرور ؟",
-                                style: TextStyle(
+                              child: Text(
+                                "Forgot password".tr,
+                                style: const TextStyle(
                                     color: AppColors.greenColor, fontSize: 14),
                               ),
                             )
@@ -252,9 +260,9 @@ class SignIn extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
                                 ),
-                                child: const Text(
-                                  "تسجيل الدخول",
-                                  style: TextStyle(
+                                child: Text(
+                                  "Sign In".tr,
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 19,
                                       fontWeight: FontWeight.bold),
@@ -267,15 +275,15 @@ class SignIn extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text('ليس لديك حساب؟'),
+                            Text("You don't have an account".tr),
                             const SizedBox(width: 5.0),
                             GestureDetector(
                               onTap: () {
                                 Get.toNamed("/SignUp");
                               },
-                              child: const Text(
-                                'التسجيل',
-                                style: TextStyle(
+                              child: Text(
+                                "Registration".tr,
+                                style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.greenColor,
                                 ),

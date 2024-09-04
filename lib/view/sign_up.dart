@@ -30,9 +30,9 @@ class SignUp extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
           physics: const BouncingScrollPhysics(),
           children: [
-            const Text(
-              'مرحباً بك في تطبيق الخدمات\nقم بإنشاء حساب جديد',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            Text(
+              "Welcome to the Fixell application-Create a new account".tr,
+              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 25.0),
             SingleChildScrollView(
@@ -54,13 +54,13 @@ class SignUp extends StatelessWidget {
                       },
                       validator: (val) {
                         if (val!.isEmpty) {
-                          return "الرجاء ملء اسم المستخدم الخاص بك";
+                          return "Please enter your username".tr;
                         }
                         return null;
                       },
                       initialValue: signUpController.userName,
                       decoration: InputDecoration(
-                        hintText: 'اسم المستخدم',
+                        hintText: " username".tr,
                         errorMaxLines: 2,
                         prefixIcon: const Icon(
                           Icons.person_2_outlined,
@@ -107,18 +107,18 @@ class SignUp extends StatelessWidget {
                       },
                       validator: (val) {
                         if (val!.isEmpty) {
-                          return "من فضلك املأ البريد الإلكتروني";
+                          return "Please enter an email".tr;
                         }
                         if (!RegExp(
                                 r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
                             .hasMatch(val)) {
-                          return "من فضلك املأ بريد إلكتروني صحيح";
+                          return "Please enter a valid email".tr;
                         }
                         return null;
                       },
                       initialValue: signUpController.userEmailAddress,
                       decoration: InputDecoration(
-                        hintText: 'البريد الإكتروني',
+                        hintText: "E-mail".tr,
                         errorMaxLines: 2,
                         prefixIcon: const EmailIcon(),
                         contentPadding: const EdgeInsets.symmetric(
@@ -163,13 +163,21 @@ class SignUp extends StatelessWidget {
                         },
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return "من فضلك املأ كلمة المرور";
+                            return "Please enter your password".tr;
+                          }
+                          if (value.length > 20) {
+                            return "The password cannot contain more than 20 characters"
+                                .tr;
+                          }
+                          if (value.length < 8) {
+                            return " The password cannot contain less than 8 characters"
+                                .tr;
                           }
                           return null;
                         },
                         initialValue: signUpController.userPassword,
                         decoration: InputDecoration(
-                          hintText: 'كلمة السر',
+                          hintText: "Password".tr,
                           errorMaxLines: 2,
                           prefixIcon: const PasswordKeyIcon(),
                           suffixIcon: IconButton(
@@ -252,9 +260,9 @@ class SignUp extends StatelessWidget {
                               // color: AppColors.kPrimary,
                               borderRadius: BorderRadius.circular(30),
                             ),
-                            child: const Text(
-                              "تسجيل حساب جديد",
-                              style: TextStyle(
+                            child: Text(
+                              "Registration".tr,
+                              style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 19,
                                   fontWeight: FontWeight.bold),
