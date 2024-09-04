@@ -140,7 +140,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.language),
             title: Text(
-              "اللغة".tr,
+              "ChangeLanguage".tr,
               style: const TextStyle(
                 fontSize: 18.0,
               ),
@@ -152,7 +152,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.logout),
             title: Text(
-              "تسجيل الخروج".tr,
+              "Log out".tr,
               style: const TextStyle(
                 fontSize: 18.0,
               ),

@@ -1,8 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../functions/functions.dart';
 import '../model/event.dart';
 import '../model/publicity.dart';
+import '../theme/main_colors.dart';
 
 class HomeController extends GetxController {
   final List<EventModel> flutterTopicsList = [
@@ -65,6 +68,74 @@ class HomeController extends GetxController {
       },
     );
     // publicities
+    update();
+  }
+ String localeValue = MainFunctions.sharredPrefs!.getString("codeLang") ??
+      Get.deviceLocale!.languageCode;
+
+  setLanguage() {
+    Get.defaultDialog(
+        title: "ChangeLanguage".tr,
+        content: Column(
+          children: [
+            TextButton(
+                style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(
+                      AppColors.kPrimary2,
+                    ),
+                    backgroundColor: MaterialStateProperty.all(
+                      AppColors.kPrimary2,
+                    ),
+                    overlayColor: MaterialStateColor.resolveWith(
+                        (states) => Colors.white.withOpacity(0.1)),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        side: const BorderSide(
+                          color: AppColors.kPrimary2,
+                        )))),
+                onPressed: () {
+                  localeValue = "fr";
+                  Get.updateLocale(const Locale("fr"));
+                  MainFunctions.sharredPrefs!
+                      .setString("codeLang", localeValue);
+                  Get.back();
+                },
+                child: Text(
+                  "francais".tr,
+                  style: TextStyle(color: Colors.white),
+                )),
+            const SizedBox(
+              height: 10,
+            ),
+            TextButton(
+                style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(
+                      AppColors.kPrimary2,
+                    ),
+                    backgroundColor: MaterialStateProperty.all(
+                      AppColors.kPrimary2,
+                    ),
+                    overlayColor: MaterialStateColor.resolveWith(
+                        (states) => Colors.white.withOpacity(0.1)),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        side: const BorderSide(
+                          color: AppColors.kPrimary2,
+                        )))),
+                onPressed: () {
+                  localeValue = "ar";
+                  Get.updateLocale(const Locale("ar"));
+                  MainFunctions.sharredPrefs!
+                      .setString("codeLang", localeValue);
+                  Get.back();
+                },
+                child: Text(
+                  "arab".tr,
+                  style: TextStyle(color: Colors.white),
+                )),
+          ],
+        ));
+
     update();
   }
 

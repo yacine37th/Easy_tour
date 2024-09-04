@@ -8,11 +8,14 @@ import 'package:flutter_application_1/view/houses/houses.dart';
 import 'package:flutter_application_1/view/sign_in.dart';
 import 'package:flutter_application_1/view/agencies/tourist_agencies.dart';
 import 'package:get/get.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'firebase_options.dart';
 import 'functions/functions.dart';
 import 'middleware/auth_middleware.dart';
 import 'model/user.dart';
+import 'services/Languages .dart';
 import 'utils/agency_details_binding.dart';
 import 'utils/forgot_password_bindings.dart';
 import 'utils/house_details_binding.dart';
@@ -50,6 +53,7 @@ Future<void> main() async {
   //     .then((value) {
   //   isPay = value.data()?["userIsPayed"];
   // });
+  MainFunctions.sharredPrefs = await SharedPreferences.getInstance();
   if (currentUser != null) {
     await MainFunctions.getcurrentUserInfos();
   }
@@ -64,10 +68,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       title: 'EASYTUOR',
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.cupertino,
-      textDirection: MainFunctions.textDirection,
+      // textDirection: MainFunctions.textDirection,
+      translations: Languages(),
+      supportedLocales: const [Locale('fr'), Locale('ar')],
+      locale: Languages.initLang(),
       getPages: [
         // GetPage(
         //     name: "/Pay",
