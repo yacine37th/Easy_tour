@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controller/house_details.dart';
+import 'package:flutter_application_1/functions/functions.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:get/get.dart';
 
@@ -170,8 +171,15 @@ class HouseDetails extends StatelessWidget {
           ),
           onPressed: () {
             // houseDetailsController.order();
-            houseDetailsController.showBottomSheet(context
-               );
+            houseDetailsController.showBottomSheet(context);
+            // MainFunctions.showBottomSheet(
+            //     context,
+            //     houseDetailsController.formKey,
+            //     houseDetailsController.nameController,
+            //     houseDetailsController.phoneController,
+            //     houseDetailsController.name,
+            //     houseDetailsController.phone,
+            //     houseDetailsController.makeReservation());
           },
           child: const Text(
             "حجز",
