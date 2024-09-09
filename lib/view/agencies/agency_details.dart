@@ -83,7 +83,8 @@ class AgencyDetailsPage extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            agencyDetailsController.order();
+            // agencyDetailsController.order();
+            agencyDetailsController.showBottomSheet(context);
           },
           child: const Text(
             "حجز",

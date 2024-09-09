@@ -149,7 +149,7 @@ class AgencyCard extends StatelessWidget {
                     agency.imageUrl,
                     height: 180,
                     width: double.infinity,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                 );
               },
@@ -201,6 +201,7 @@ class AgencyCard extends StatelessWidget {
                       const SizedBox(height: 8),
                       Text(
                         agency.location,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey[600],
