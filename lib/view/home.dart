@@ -49,7 +49,12 @@ class Home extends StatelessWidget {
                         itemCount: homeController.publicities.length,
                         itemBuilder: (context, index, realIndex) {
                           return InkWell(
-                            onTap: () async {},
+                            onTap: () async {
+                              homeController.launchURL(homeController
+                                  .publicities.values
+                                  .elementAt(index)
+                                  .url);
+                            },
                             child: Container(
                               margin: const EdgeInsets.only(left: 2, right: 2),
                               width: 2000,
