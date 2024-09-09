@@ -35,13 +35,16 @@ class AgencyDetailsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.network(
-                agencyDetailsController.agency.imageUrl,
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
+            Container(
+              color: Colors.grey,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.network(
+                  agencyDetailsController.agency.imageUrl,
+                  // height: 200,
+                  width: double.infinity,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             const SizedBox(height: 20),

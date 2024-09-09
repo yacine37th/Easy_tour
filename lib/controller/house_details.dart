@@ -271,7 +271,7 @@ class HouseDetailsController extends GetxController {
         "reservationHousesId": doc.id,
         "reservationHousesUserId": currentUserInfos.uID,
         "reservationHousesUserName": name,
-        "reservationHousesHousePicture": house.imageUrl[0],
+        "reservationHousesPicture": house.imageUrl[0],
         "reservationHousesPhone": phone,
       });
 
