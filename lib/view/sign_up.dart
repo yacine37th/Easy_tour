@@ -60,7 +60,7 @@ class SignUp extends StatelessWidget {
                       },
                       initialValue: signUpController.userName,
                       decoration: InputDecoration(
-                        hintText: " username".tr,
+                        hintText: "username".tr,
                         errorMaxLines: 2,
                         prefixIcon: const Icon(
                           Icons.person_2_outlined,

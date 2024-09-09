@@ -170,6 +170,8 @@ class HouseDetails extends StatelessWidget {
           ),
           onPressed: () {
             // houseDetailsController.order();
+            houseDetailsController.showBottomSheet(context
+               );
           },
           child: const Text(
             "حجز",
