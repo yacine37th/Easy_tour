@@ -30,8 +30,16 @@ class HousesController extends GetxController {
         // Add the agency to the list
         houses.add(touristAgencyModel);
       }
+      print("houses.length//////////////");
+      print(houses.length);
       update(); // Notify listeners about the update
     });
+    houses.forEach(
+      (element) {
+        print(element.id);
+        print(element.id);
+      },
+    );
   }
 
   @override

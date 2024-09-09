@@ -405,6 +405,13 @@ class AgencyCard extends StatelessWidget {
                     height: 180,
                     width: double.infinity,
                     fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      print('Error loading image: $error');
+                      return Container(
+                        color: Colors.grey,
+                        child: Center(child: Text('Image not available')),
+                      );
+                    },
                   ),
                 );
               },
