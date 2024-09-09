@@ -70,7 +70,7 @@ class TouristicGuideDetailsController extends GetxController {
         "reservationGuideId": doc.id,
         "reservationGuideUserId": currentUserInfos.uID,
         "reservationGuideUserName": name,
-        "reservationGuideHousePicture": touristicGuideModel.image,
+        "reservationGuidePicture": touristicGuideModel.image,
         "reservationGuidePhone": phone,
       });
 

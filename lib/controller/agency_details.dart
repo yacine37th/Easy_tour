@@ -70,7 +70,7 @@ class AgencyDetailsController extends GetxController {
         "reservationWakalatId": doc.id,
         "reservationWakalatUserId": currentUserInfos.uID,
         "reservationWakalatUserName": name,
-        "reservationWakalatHousePicture": agency.imageUrl[0],
+        "reservationWakalatHousePicture": agency.imageUrl,
         "reservationWakalatPhone": phone,
       });
 

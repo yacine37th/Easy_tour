@@ -268,11 +268,11 @@ class HouseDetailsController extends GetxController {
       var doc =
           FirebaseFirestore.instance.collection("reservationHouses").doc();
       doc.set({
-        "reservationHouseId": doc.id,
-        "reservationHouseUserId": currentUserInfos.uID,
-        "reservationHouseUserName": name,
-        "reservationHouseHousePicture": house.imageUrl[0],
-        "reservationHousePhone": phone,
+        "reservationHousesId": doc.id,
+        "reservationHousesUserId": currentUserInfos.uID,
+        "reservationHousesUserName": name,
+        "reservationHousesHousePicture": house.imageUrl[0],
+        "reservationHousesPhone": phone,
       });
 
       // Clear the text fields after successful reservation
@@ -309,7 +309,7 @@ class HouseDetailsController extends GetxController {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   TextFormField(
-                    controller: nameController,  // Use the controller
+                    controller: nameController, // Use the controller
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.text,
                     onSaved: (username) {
@@ -360,7 +360,7 @@ class HouseDetailsController extends GetxController {
                   ),
                   SizedBox(height: 16.0),
                   TextFormField(
-                    controller: phoneController,  // Use the controller
+                    controller: phoneController, // Use the controller
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.phone,
                     onSaved: (phoneNumber) {
@@ -454,7 +454,7 @@ class HouseDetailsController extends GetxController {
       },
     );
   }
-  
+
   @override
   void onClose() {
     // Dispose the controllers when the controller is disposed
