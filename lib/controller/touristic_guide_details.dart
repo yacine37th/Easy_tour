@@ -65,6 +65,7 @@ class TouristicGuideDetailsController extends GetxController {
         ));
 
     try {
+      DateTime now = DateTime.now();
       var doc = FirebaseFirestore.instance.collection("reservationGuide").doc();
       doc.set({
         "reservationGuideId": doc.id,
@@ -72,6 +73,7 @@ class TouristicGuideDetailsController extends GetxController {
         "reservationGuideUserName": name,
         "reservationGuidePicture": touristicGuideModel.image,
         "reservationGuidePhone": phone,
+        "reservationGuideDate": now,
       });
 
       // Clear the text fields after successful reservation

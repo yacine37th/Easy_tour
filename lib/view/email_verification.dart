@@ -24,9 +24,9 @@ class EmailVerification extends StatelessWidget {
               Icons.arrow_back_ios_outlined,
               color: AppColors.whiteColor,
             )),
-        title: const Text(
-          "التحقق من البريد الإلكتروني",
-          style: TextStyle(color: AppColors.whiteColor),
+        title: Text(
+          "Email verification".tr,
+          style: const TextStyle(color: AppColors.whiteColor),
         ),
       ),
       body: Padding(

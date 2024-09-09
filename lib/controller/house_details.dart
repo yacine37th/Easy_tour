@@ -265,6 +265,8 @@ class HouseDetailsController extends GetxController {
         ));
 
     try {
+      DateTime now = DateTime.now();
+
       var doc =
           FirebaseFirestore.instance.collection("reservationHouses").doc();
       doc.set({
@@ -273,6 +275,7 @@ class HouseDetailsController extends GetxController {
         "reservationHousesUserName": name,
         "reservationHousesPicture": house.imageUrl[0],
         "reservationHousesPhone": phone,
+        "reservationHousesDate": now,
       });
 
       // Clear the text fields after successful reservation

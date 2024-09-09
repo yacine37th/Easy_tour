@@ -46,7 +46,7 @@ class Languages implements Translations {
               "Bienvenue dans l'application Khadamat\nCréer un nouveau compte",
           "Please enter your username":
               "Veuillez entrer votre nom d'utilisateur",
-          " username": "Nom d'utilisateur",
+          "username": "Nom d'utilisateur",
           "The Username field must contain at least 3 characters":
               "Le champ Nom d'utilisateur doit contenir au moins 3 caractères",
           "User type": "Type d'utilisateur",
@@ -134,6 +134,8 @@ class Languages implements Translations {
           "please fill the name and family name":
               "Veuillez entrer nom et prénom",
           "please fill phone": "Veuillez entrer numéro de téléphone",
+          "Email verification": "Vérification de l'Email",
+          "Resend": "Envoyer"
         },
         "ar": {
           "ChangeLanguage": "تغيير اللغة",
@@ -174,7 +176,7 @@ class Languages implements Translations {
           "Welcome to the Fixell application-Create a new account":
               "مرحبًا بك في تطبيق خدمات\nإنشاء حساب جديد",
           "Please enter your username": "يرجى إدخال اسم المستخدم",
-          " username": "اسم المستخدم",
+          "username": "اسم المستخدم",
           "The Username field must contain at least 3 characters":
               "يجب أن يحتوي حقل اسم المستخدم على 3 أحرف على الأقل",
           "User type": "نوع المستخدم ",
@@ -260,7 +262,9 @@ class Languages implements Translations {
           "order": "حجز",
           "name and family name": "الاسم و اللقب...",
           "please fill the name and family name": "الرجاء ادخال الاسم و اللقب",
-          "please fill phone": "الرجاء ادخال رقم الهاتف"
+          "please fill phone": "الرجاء ادخال رقم الهاتف",
+          "Email verification": "التحقق من البريد الإلكتروني",
+          "Resend": "ارسال"
         }
       };
   static Locale initLang() {
