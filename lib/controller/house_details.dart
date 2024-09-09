@@ -259,7 +259,7 @@ class HouseDetailsController extends GetxController {
   Future<void> makeReservation() async {
     Get.defaultDialog(
         barrierDismissible: false,
-        title: "انتظر من فضلك",
+        title: "Please wait".tr,
         content: const CircularProgressIndicator(
           color: AppColors.kPrimary2,
         ));
@@ -320,12 +320,12 @@ class HouseDetailsController extends GetxController {
                     },
                     validator: (val) {
                       if (val!.isEmpty) {
-                        return "الرجاء ادخال الاسم و اللقب";
+                        return "please fill the name and family name".tr;
                       }
                       return null;
                     },
                     decoration: InputDecoration(
-                      hintText: "الاسم و اللقب...",
+                      hintText: "name and family name".tr,
                       prefixIcon: const Icon(
                         Icons.person,
                         color: AppColors.greenColor,
@@ -376,7 +376,7 @@ class HouseDetailsController extends GetxController {
                       return null;
                     },
                     decoration: InputDecoration(
-                      hintText: "رقم الهاتف ...",
+                      hintText: "Phone".tr,
                       prefixIcon: const Icon(
                         Icons.phone,
                         color: AppColors.greenColor,
@@ -427,18 +427,17 @@ class HouseDetailsController extends GetxController {
                           backgroundColor: MaterialStateProperty.all(
                             AppColors.greenColor,
                           ),
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100)))),
+                          shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(100)))),
                       child: Container(
                         height: 35,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        child: const Text(
-                          "متابعة ",
-                          style: TextStyle(
+                        child: Text(
+                          "Continue".tr,
+                          style: const TextStyle(
                               color: Colors.white,
                               fontSize: 19,
                               fontWeight: FontWeight.bold),

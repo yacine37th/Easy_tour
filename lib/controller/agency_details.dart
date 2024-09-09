@@ -58,7 +58,7 @@ class AgencyDetailsController extends GetxController {
   Future<void> makeReservation() async {
     Get.defaultDialog(
         barrierDismissible: false,
-        title: "انتظر من فضلك",
+        title: "Please wait".tr,
         content: const CircularProgressIndicator(
           color: AppColors.kPrimary2,
         ));
@@ -119,12 +119,12 @@ class AgencyDetailsController extends GetxController {
                     },
                     validator: (val) {
                       if (val!.isEmpty) {
-                        return "الرجاء ادخال الاسم و اللقب";
+                        return "please fill the name and family name".tr;
                       }
                       return null;
                     },
                     decoration: InputDecoration(
-                      hintText: "الاسم و اللقب...",
+                      hintText: "name and family name".tr,
                       prefixIcon: const Icon(
                         Icons.person,
                         color: AppColors.greenColor,
@@ -175,7 +175,7 @@ class AgencyDetailsController extends GetxController {
                       return null;
                     },
                     decoration: InputDecoration(
-                      hintText: "رقم الهاتف ...",
+                      hintText: "Phone".tr,
                       prefixIcon: const Icon(
                         Icons.phone,
                         color: AppColors.greenColor,
@@ -235,8 +235,8 @@ class AgencyDetailsController extends GetxController {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        child: const Text(
-                          "متابعة ",
+                        child: Text(
+                          "Continue".tr,
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 19,

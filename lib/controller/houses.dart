@@ -4,20 +4,7 @@ import 'package:get/get.dart';
 import '../model/house.dart';
 
 class HousesController extends GetxController {
-  final List<HouseModel> houses = [
-    // HouseModel(
-    //   imageUrl: ['assets/images/house1.png'],
-    //   id: '3',
-    //   wilaya: 'oran',
-    //   adress: 'AI TURk',
-    //   phone: '+21343',
-    //   link: '',
-    //   location: '',
-    //   description: '',
-    // ),
-
-    // Add more houses here
-  ];
+  final List<HouseModel> houses = [];
   Future<void> getAllHouses() async {
     FirebaseFirestore.instance
         .collection("houses")

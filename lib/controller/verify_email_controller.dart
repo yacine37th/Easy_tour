@@ -27,7 +27,8 @@ class EmailVerificationController extends GetxController {
         checkEmailVerified();
         if (isEmailVerified) {
           timer.cancel();
-          MainFunctions.successSnackBar("تم تأكيد الحساب");
+          MainFunctions.successSnackBar(
+              "The account has been confirmed. Please log in.".tr);
           Get.offAllNamed("/SignIn");
           prevVerfiy = true;
         }

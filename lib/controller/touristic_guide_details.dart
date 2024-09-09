@@ -10,7 +10,7 @@ import '../theme/main_colors.dart';
 
 class TouristicGuideDetailsController extends GetxController {
   final TouristicGuideModel touristicGuideModel = Get.arguments;
-    final formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
 
   // Add TextEditingControllers
   final TextEditingController nameController = TextEditingController();
@@ -22,9 +22,11 @@ class TouristicGuideDetailsController extends GetxController {
       throw 'Could not launch $url';
     }
   }
-   Future<void> order() async {
-    var doc =
-        await FirebaseFirestore.instance.collection("touristicGuideOrders").doc();
+
+  Future<void> order() async {
+    var doc = await FirebaseFirestore.instance
+        .collection("touristicGuideOrders")
+        .doc();
 
     Get.defaultDialog(
       title: 'تاكيد',
@@ -51,21 +53,19 @@ class TouristicGuideDetailsController extends GetxController {
     );
   }
 
-
   String? name;
   String? phone;
 
   Future<void> makeReservation() async {
     Get.defaultDialog(
         barrierDismissible: false,
-        title: "انتظر من فضلك",
+        title: "Please wait".tr,
         content: const CircularProgressIndicator(
           color: AppColors.greenColor,
         ));
 
     try {
-      var doc =
-          FirebaseFirestore.instance.collection("reservationGuide").doc();
+      var doc = FirebaseFirestore.instance.collection("reservationGuide").doc();
       doc.set({
         "reservationGuideId": doc.id,
         "reservationGuideUserId": currentUserInfos.uID,
@@ -119,12 +119,12 @@ class TouristicGuideDetailsController extends GetxController {
                     },
                     validator: (val) {
                       if (val!.isEmpty) {
-                        return "الرجاء ادخال الاسم و اللقب";
+                        return "please fill the name and family name".tr;
                       }
                       return null;
                     },
                     decoration: InputDecoration(
-                      hintText: "الاسم و اللقب...",
+                      hintText: "name and family name".tr,
                       prefixIcon: const Icon(
                         Icons.person,
                         color: AppColors.greenColor,
@@ -175,7 +175,7 @@ class TouristicGuideDetailsController extends GetxController {
                       return null;
                     },
                     decoration: InputDecoration(
-                      hintText: "رقم الهاتف ...",
+                      hintText: "Phone".tr,
                       prefixIcon: const Icon(
                         Icons.phone,
                         color: AppColors.greenColor,
@@ -235,9 +235,9 @@ class TouristicGuideDetailsController extends GetxController {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        child: const Text(
-                          "متابعة ",
-                          style: TextStyle(
+                        child: Text(
+                          "Continue".tr,
+                          style: const TextStyle(
                               color: Colors.white,
                               fontSize: 19,
                               fontWeight: FontWeight.bold),

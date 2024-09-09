@@ -128,7 +128,11 @@ class Languages implements Translations {
           "Name": "Nom et Prénom",
           "Contact us": "Contacter nous",
           "Know us": "Connaissez nous",
-          "web site": "Nos site web"
+          "web site": "Nos site web",
+          "order": "Réserver",
+          "name and family name": "Nom et Prénom...",
+          "please fill the name and family name": "Veuillez entrer nom et prénom"
+
         },
         "ar": {
           "ChangeLanguage": "تغيير اللغة",
@@ -251,7 +255,10 @@ class Languages implements Translations {
           "Place": "المكان",
           "Contact us": "تواصل معنا",
           "Know us": "تعرف علينا",
-          "web site": "موقعنا الالكتروني"
+          "web site": "موقعنا الالكتروني",
+          "order": "حجز",
+          "name and family name": "الاسم و اللقب...",
+          "please fill the name and family name": "الرجاء ادخال الاسم و اللقب"
         }
       };
   static Locale initLang() {

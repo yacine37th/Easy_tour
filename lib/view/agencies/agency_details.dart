@@ -86,9 +86,9 @@ class AgencyDetailsPage extends StatelessWidget {
             // agencyDetailsController.order();
             agencyDetailsController.showBottomSheet(context);
           },
-          child: const Text(
-            "حجز",
-            style: TextStyle(
+          child: Text(
+            "order".tr,
+            style: const TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
               color: Colors.white,

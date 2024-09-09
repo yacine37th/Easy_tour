@@ -210,7 +210,7 @@ class SignUpController extends GetxController {
   createNewUser() async {
     Get.defaultDialog(
         barrierDismissible: false,
-        title: "يرجى الانتظار...",
+        title: "Please wait".tr,
         content: const CircularProgressIndicator(
           color: AppColors.kPrimary2,
         ));

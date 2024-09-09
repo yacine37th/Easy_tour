@@ -181,8 +181,8 @@ class HouseDetails extends StatelessWidget {
             //     houseDetailsController.phone,
             //     houseDetailsController.makeReservation());
           },
-          child: const Text(
-            "حجز",
+          child: Text(
+            "order".tr,
             style: TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,

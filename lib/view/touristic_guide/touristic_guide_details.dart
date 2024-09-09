@@ -114,8 +114,8 @@ class TouristicGuideDetails extends StatelessWidget {
             // agencyDetailsController.order();
             touristicGuideDetailsController.showBottomSheet(context);
           },
-          child: const Text(
-            "حجز",
+          child: Text(
+            "order".tr,
             style: TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,

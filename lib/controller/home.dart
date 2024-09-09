@@ -260,46 +260,127 @@ class HomeController extends GetxController {
 
   String localeValue = MainFunctions.sharredPrefs!.getString("codeLang") ??
       Get.deviceLocale!.languageCode;
-
-  void setLanguage() {
+  setLanguage() {
     Get.defaultDialog(
         title: "ChangeLanguage".tr,
         content: Column(
           children: [
-            _buildLanguageButton("fr", "francais"),
-            const SizedBox(height: 10),
-            _buildLanguageButton("ar", "arab"),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: TextButton(
+                onPressed: () {
+                  localeValue = "fr";
+                  Get.updateLocale(const Locale("fr"));
+                  MainFunctions.sharredPrefs!
+                      .setString("codeLang", localeValue);
+                  _initializeFlutterTopicsList(); // Update the list to the new language
+                  Get.forceAppUpdate();
+                  Get.back();
+                },
+                style: ButtonStyle(
+                    foregroundColor: WidgetStateProperty.all(
+                      AppColors.kPrimary2,
+                    ),
+                    textStyle: WidgetStateProperty.resolveWith((states) {
+                      Color textColor = states.contains(WidgetState.disabled)
+                          ? AppColors.kPrimary2
+                          : AppColors.kLine;
+                      return TextStyle(fontSize: 18, color: textColor);
+                    }),
+                    overlayColor: WidgetStateColor.resolveWith(
+                        (states) => AppColors.kPrimary2.withOpacity(0.2)),
+                    shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        side: const BorderSide(
+                          color: AppColors.kPrimary2,
+                        )))),
+                child: Card(
+                  elevation: 0,
+                  color: Colors.transparent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Container(
+                    height: 35,
+                    alignment: Alignment.center,
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        20,
+                      ),
+                    ),
+                    child: Text(
+                      "francais".tr,
+                      style: const TextStyle(
+                          color: AppColors.kPrimary2,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: TextButton(
+                onPressed: () {
+                  // Get.toNamed("/SignUp");
+                  localeValue = "ar";
+                  Get.updateLocale(const Locale("ar"));
+                  MainFunctions.sharredPrefs!
+                      .setString("codeLang", localeValue);
+                  Get.forceAppUpdate();
+                  _initializeFlutterTopicsList(); // Update the list to the new language
+                  Get.back();
+                },
+                style: ButtonStyle(
+                    foregroundColor: WidgetStateProperty.all(
+                      AppColors.kPrimary2,
+                    ),
+                    textStyle: WidgetStateProperty.resolveWith((states) {
+                      Color textColor = states.contains(WidgetState.disabled)
+                          ? AppColors.kPrimary2
+                          : AppColors.kLine;
+                      return TextStyle(fontSize: 18, color: textColor);
+                    }),
+                    overlayColor: WidgetStateColor.resolveWith(
+                        (states) => AppColors.kPrimary2.withOpacity(0.2)),
+                    shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        side: const BorderSide(
+                          color: AppColors.kPrimary2,
+                        )))),
+                child: Card(
+                  elevation: 0,
+                  color: Colors.transparent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Container(
+                    height: 35,
+                    alignment: Alignment.center,
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        20,
+                      ),
+                    ),
+                    child: Text(
+                      "arab".tr,
+                      style: const TextStyle(
+                          color: AppColors.kPrimary2,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ));
-  }
-
-  TextButton _buildLanguageButton(String langCode, String langLabel) {
-    return TextButton(
-      style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all(AppColors.kPrimary2),
-        backgroundColor: MaterialStateProperty.all(AppColors.kPrimary2),
-        overlayColor: MaterialStateColor.resolveWith(
-            (states) => Colors.white.withOpacity(0.1)),
-        shape: MaterialStateProperty.all(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100),
-            side: const BorderSide(color: AppColors.kPrimary2),
-          ),
-        ),
-      ),
-      onPressed: () {
-        localeValue = langCode;
-        Get.updateLocale(Locale(langCode));
-        Get.forceAppUpdate();
-        Get.appUpdate();
-        MainFunctions.sharredPrefs!.setString("codeLang", localeValue);
-        Get.back();
-        _initializeFlutterTopicsList(); // Update the list to the new language
-      },
-      child: Text(
-        langLabel.tr,
-        style: TextStyle(color: Colors.white),
-      ),
-    );
+    update();
   }
 }
