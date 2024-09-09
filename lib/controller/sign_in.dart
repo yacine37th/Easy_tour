@@ -148,7 +148,7 @@ class SignInController extends GetxController {
 
       if (e.code == 'user-not-found') {
         Get.defaultDialog(
-          title: "المستخدم غير موجود",
+          title: "User not found".tr,
           content: const Icon(
             Icons.report_problem,
             color: Colors.red,
@@ -159,7 +159,7 @@ class SignInController extends GetxController {
         );
       } else if (e.code == 'wrong-password') {
         Get.defaultDialog(
-          title: "يرجى التحقق من كلمة المرور",
+          title: "wrong-password".tr,
           content: const Icon(
             Icons.report_problem,
             color: Colors.red,

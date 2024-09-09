@@ -131,8 +131,9 @@ class Languages implements Translations {
           "web site": "Nos site web",
           "order": "Réserver",
           "name and family name": "Nom et Prénom...",
-          "please fill the name and family name": "Veuillez entrer nom et prénom"
-
+          "please fill the name and family name":
+              "Veuillez entrer nom et prénom",
+          "please fill phone": "Veuillez entrer numéro de téléphone",
         },
         "ar": {
           "ChangeLanguage": "تغيير اللغة",
@@ -258,7 +259,8 @@ class Languages implements Translations {
           "web site": "موقعنا الالكتروني",
           "order": "حجز",
           "name and family name": "الاسم و اللقب...",
-          "please fill the name and family name": "الرجاء ادخال الاسم و اللقب"
+          "please fill the name and family name": "الرجاء ادخال الاسم و اللقب",
+          "please fill phone": "الرجاء ادخال رقم الهاتف"
         }
       };
   static Locale initLang() {

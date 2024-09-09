@@ -91,6 +91,7 @@ class HouseCard extends StatelessWidget {
                 children: [
                   Text(
                     touristicGuide.name,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -99,6 +100,7 @@ class HouseCard extends StatelessWidget {
 
                   Text(
                     touristicGuide.adress,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: Colors.grey,
                     ),

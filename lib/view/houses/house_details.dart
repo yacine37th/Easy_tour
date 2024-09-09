@@ -148,7 +148,7 @@ class HouseDetails extends StatelessWidget {
                   );
                 }
                 return _buildInfoCard(
-                  icon: Icons.language,
+                  icon: Icons.description,
                   title: "Des".tr,
                   subtitle: houseDetailsController.house.description!,
                   onPressed: () => houseDetailsController

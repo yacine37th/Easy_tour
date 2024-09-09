@@ -170,7 +170,7 @@ class TouristicGuideDetailsController extends GetxController {
                     },
                     validator: (val) {
                       if (val!.isEmpty) {
-                        return "الرجاء ادخال رقم الهاتف";
+                        return "please fill phone".tr;
                       }
                       return null;
                     },

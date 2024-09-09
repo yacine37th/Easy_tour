@@ -134,7 +134,7 @@ class ForgotPasswordController extends GetxController {
   sendEmail() async {
     Get.defaultDialog(
         barrierDismissible: false,
-        title: "يرجى الانتظار...",
+        title: "Please wait".tr,
         content: const CircularProgressIndicator(
           color: AppColors.kPrimary2,
         ));
@@ -152,7 +152,7 @@ class ForgotPasswordController extends GetxController {
         someError = true;
 
         Get.defaultDialog(
-          title: "المستخدم غير موجود",
+          title: "User not found".tr,
           content: const Icon(
             Icons.report_problem,
             color: Colors.red,
@@ -195,4 +195,3 @@ class ForgotPasswordController extends GetxController {
     super.onClose();
   }
 }
-

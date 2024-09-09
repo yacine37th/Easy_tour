@@ -91,7 +91,7 @@ class TouristicGuideDetails extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               _buildInfoCard(
-                  icon: Icons.language,
+                  icon: Icons.description,
                   title: "Des".tr,
                   subtitle: touristicGuideDetailsController
                       .touristicGuideModel.description,
