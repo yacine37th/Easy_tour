@@ -135,7 +135,8 @@ class Languages implements Translations {
               "Veuillez entrer nom et prénom",
           "please fill phone": "Veuillez entrer numéro de téléphone",
           "Email verification": "Vérification de l'Email",
-          "Resend": "Envoyer"
+          "Resend": "Envoyer",
+          "Hotels": "Hôtels"
         },
         "ar": {
           "ChangeLanguage": "تغيير اللغة",
@@ -264,7 +265,8 @@ class Languages implements Translations {
           "please fill the name and family name": "الرجاء ادخال الاسم و اللقب",
           "please fill phone": "الرجاء ادخال رقم الهاتف",
           "Email verification": "التحقق من البريد الإلكتروني",
-          "Resend": "ارسال"
+          "Resend": "ارسال",
+          "Hotels": "الفنادق"
         }
       };
   static Locale initLang() {
