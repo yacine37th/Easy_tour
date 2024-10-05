@@ -22,4 +22,18 @@ class TouristAgencyModel {
     required this.website,
     required this.type,
   });
+  factory TouristAgencyModel.fromMap(Map<String, dynamic> map) {
+    return TouristAgencyModel(
+      id: map['touristAgencyId'],
+      name: map['touristAgencyName'],
+      imageUrl: map['touristAgencyIcon'],
+      wilaya: map['touristAgencyWilaya'],
+      location: map['touristAgencyAdress'],
+      position: map['touristAgencyLocationMap'],
+      phone: map['touristAgencyPhone'],
+      website: map['touristAgencyLink'],
+      type: map['touristAgencyType'],
+      rating: '',
+    );
+  }
 }

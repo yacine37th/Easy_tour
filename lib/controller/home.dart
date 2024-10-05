@@ -178,6 +178,14 @@ class HomeController extends GetxController {
         link: '/TouristicGuides',
         conditions: '',
       ),
+      EventModel(
+        id: "2",
+        topicIcon: "assets/images/posts.png",
+        topicName: "Activities".tr,
+        link: '/Activities',
+        conditions: '',
+      ),
+      // 
     ];
   }
 

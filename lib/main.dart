@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/activities_binding.dart';
 import 'package:flutter_application_1/utils/home_binding.dart';
 import 'package:flutter_application_1/view/agencies/agency_details.dart';
 import 'package:flutter_application_1/view/home.dart';
@@ -26,6 +27,7 @@ import 'utils/tourist_agencies_binding.dart';
 import 'utils/touristic_guide_details_binding.dart';
 import 'utils/touristic_guides_binding.dart';
 import 'utils/verify_email_bindings.dart';
+import 'view/activities.dart';
 import 'view/email_verification.dart';
 import 'view/forgot_password.dart';
 import 'view/houses/house_details.dart';
@@ -94,7 +96,7 @@ class MyApp extends StatelessWidget {
           name: "/SignIn",
           page: () => const SignIn(),
           binding: SignInBinding(),
-          // middlewares: [AuthMiddleware()]
+          middlewares: [AuthMiddleware()]
         ),
         GetPage(
             name: "/EmailVerification",
@@ -148,18 +150,18 @@ class MyApp extends StatelessWidget {
           page: () => SearchHotelsPage(),
           // binding: CartBinding(),
         ),
-        // GetPage(
-        //   name: "/AddForm",
-        //   page: () => const AddForm(),
-        //   binding: AddFormBinding(),
-        // ),
+        GetPage(
+          name: "/Activities",
+          page: () => const Activities(),
+          binding: ActivitiesBinding(),
+        ),
         // GetPage(
         //   name: "/ReservationForm",
         //   page: () => const ReservationForm(),
         //   binding: ReservationFormBinding(),
         // ),
       ],
-      initialRoute: "/Home",
+      initialRoute: "/SignIn",
     );
   }
 }
