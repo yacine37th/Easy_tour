@@ -16,9 +16,9 @@ class Activities extends StatelessWidget {
       backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
         backgroundColor: AppColors.greenColor,
-        title: const Text(
-          "المنشورات",
-          style: TextStyle(color: AppColors.whiteColor),
+        title: Text(
+          "Activities".tr,
+          style: const TextStyle(color: AppColors.whiteColor),
         ),
         elevation: 0,
         leading: IconButton(
@@ -41,10 +41,10 @@ class Activities extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.inbox_outlined, size: 64, color: Colors.grey),
-                SizedBox(height: 16),
+                const Icon(Icons.inbox_outlined, size: 64, color: Colors.grey),
+                const SizedBox(height: 16),
                 Text(
-                  "لا توجد منشورات حالياً",
+                  "لا توجد منشورات حالياً".tr,
                   style: TextStyle(fontSize: 18, color: Colors.grey),
                 ),
               ],

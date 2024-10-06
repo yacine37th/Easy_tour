@@ -30,49 +30,51 @@ class AgencyDetailsPage extends StatelessWidget {
               height: 1,
             )),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              color: Colors.grey,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  agencyDetailsController.agency.imageUrl,
-                  // height: 200,
-                  width: double.infinity,
-                  fit: BoxFit.contain,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                color: Colors.grey,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.network(
+                    agencyDetailsController.agency.imageUrl,
+                    // height: 200,
+                    width: double.infinity,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            _buildInfoCard(
-              icon: Icons.location_on,
-              title: '${agencyDetailsController.agency.wilaya},',
-              subtitle: agencyDetailsController.agency.location,
-              onPressed: () => agencyDetailsController
-                  .launchURL(agencyDetailsController.agency.position),
-            ),
-            const SizedBox(height: 16),
-            _buildInfoCard(
-              icon: Icons.phone,
-              title: "Phone".tr,
-              //
-              subtitle: agencyDetailsController.agency.phone,
-              onPressed: () => agencyDetailsController
-                  .launchURL('tel:${agencyDetailsController.agency.phone}'),
-            ),
-            const SizedBox(height: 16),
-            _buildInfoCard(
-              icon: Icons.language,
-              title: "Visit the link".tr,
-              subtitle: "Click to go".tr,
-              onPressed: () => agencyDetailsController
-                  .launchURL(agencyDetailsController.agency.website),
-            ),
-          ],
+              const SizedBox(height: 20),
+              _buildInfoCard(
+                icon: Icons.location_on,
+                title: '${agencyDetailsController.agency.wilaya},',
+                subtitle: agencyDetailsController.agency.location,
+                onPressed: () => agencyDetailsController
+                    .launchURL(agencyDetailsController.agency.position),
+              ),
+              const SizedBox(height: 16),
+              _buildInfoCard(
+                icon: Icons.phone,
+                title: "Phone".tr,
+                //
+                subtitle: agencyDetailsController.agency.phone,
+                onPressed: () => agencyDetailsController
+                    .launchURL('tel:${agencyDetailsController.agency.phone}'),
+              ),
+              const SizedBox(height: 16),
+              _buildInfoCard(
+                icon: Icons.language,
+                title: "Visit the link".tr,
+                subtitle: "Click to go".tr,
+                onPressed: () => agencyDetailsController
+                    .launchURL(agencyDetailsController.agency.website),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Padding(

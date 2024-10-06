@@ -137,7 +137,9 @@ class Languages implements Translations {
           "Email verification": "Vérification de l'Email",
           "Resend": "Envoyer",
           "Hotels": "Hôtels",
-          "Activities": "Les posts"
+          "Activities": "Les posts",
+          "المنشورات": "Publications",
+          "لا توجد منشورات حالياً": "Il n'y a aucun message actuellement"
         },
         "ar": {
           "ChangeLanguage": "تغيير اللغة",
@@ -268,7 +270,9 @@ class Languages implements Translations {
           "Email verification": "التحقق من البريد الإلكتروني",
           "Resend": "ارسال",
           "Hotels": "الفنادق",
-          "Activities": "المنشورات"
+          "Activities": "المنشورات",
+          "المنشورات": "المنشورات",
+          "لا توجد منشورات حالياً": "لا توجد منشورات حالياً"
         }
       };
   static Locale initLang() {
